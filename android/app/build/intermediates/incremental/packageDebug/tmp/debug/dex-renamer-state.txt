@@ -1,0 +1,7 @@
+#Fri Jun 11 15:17:14 IST 2021
+base.1=/home/tesmi/Desktop/agl-learning-app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
+path.1=classes.dex
+base.0=/home/tesmi/Desktop/agl-learning-app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
