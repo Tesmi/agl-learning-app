@@ -12,6 +12,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		AC5A2AFCED6A4C9CB8AE0CCA /* BetterGrade-519DV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5950C111A4CBDAECC8F37 /* BetterGrade-519DV.ttf */; };
+		013FE835BE6249D6B1B1AE88 /* AquireBold-8Ma60.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79C55E7216D24188B5696AF3 /* AquireBold-8Ma60.otf */; };
+		EEE64EC3EA9C4720A859BFC1 /* WelcomeSummer-GOqXP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB383329E5F24F00AE436A32 /* WelcomeSummer-GOqXP.ttf */; };
+		A8FEC9DF755845618C592C03 /* RanilleNormalRegular-EaZJj.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C878550C50C44A88C5ABA77 /* RanilleNormalRegular-EaZJj.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = agl_learning_app/main.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = agl_learning_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		9CA5950C111A4CBDAECC8F37 /* BetterGrade-519DV.ttf */ = {isa = PBXFileReference; name = "BetterGrade-519DV.ttf"; path = "../assets/fonts/BetterGrade-519DV.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		79C55E7216D24188B5696AF3 /* AquireBold-8Ma60.otf */ = {isa = PBXFileReference; name = "AquireBold-8Ma60.otf"; path = "../assets/fonts/AquireBold-8Ma60.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB383329E5F24F00AE436A32 /* WelcomeSummer-GOqXP.ttf */ = {isa = PBXFileReference; name = "WelcomeSummer-GOqXP.ttf"; path = "../assets/fonts/WelcomeSummer-GOqXP.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C878550C50C44A88C5ABA77 /* RanilleNormalRegular-EaZJj.ttf */ = {isa = PBXFileReference; name = "RanilleNormalRegular-EaZJj.ttf"; path = "../assets/fonts/RanilleNormalRegular-EaZJj.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 				00E356EF1AD99517003FC87E /* agl_learning_appTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				C214AF6CB2094801A867ADF7 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -123,6 +132,18 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		C214AF6CB2094801A867ADF7 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				9CA5950C111A4CBDAECC8F37 /* BetterGrade-519DV.ttf */,
+				79C55E7216D24188B5696AF3 /* AquireBold-8Ma60.otf */,
+				CB383329E5F24F00AE436A32 /* WelcomeSummer-GOqXP.ttf */,
+				9C878550C50C44A88C5ABA77 /* RanilleNormalRegular-EaZJj.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -214,6 +235,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				AC5A2AFCED6A4C9CB8AE0CCA /* BetterGrade-519DV.ttf in Resources */,
+				013FE835BE6249D6B1B1AE88 /* AquireBold-8Ma60.otf in Resources */,
+				EEE64EC3EA9C4720A859BFC1 /* WelcomeSummer-GOqXP.ttf in Resources */,
+				A8FEC9DF755845618C592C03 /* RanilleNormalRegular-EaZJj.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
