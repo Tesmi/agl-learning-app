@@ -14,7 +14,7 @@ export default function SplashScreen() {
   const [steps, setSteps] = useState([
     {
       image: require("../../assets/1.png"),
-      title: "Get Better Education",
+      title: "Better Education",
       color: "#0c6333",
       description:
         "Maecenas elementum est ut nulla blandit ultrices. Nunc quis ipsum urna. Aenean euismod sollicitudin nunc, ut rutrum magna ultricies eget",
@@ -50,7 +50,7 @@ export default function SplashScreen() {
     setCurrentStep(currentStep <= 0 ? 0 : currentStep - 1);
   };
 
-  const login = () => {
+  const gotoLoginPage = () => {
     console.log("Heck i am working");
   };
 
@@ -119,7 +119,7 @@ export default function SplashScreen() {
         )}
 
         <TouchableOpacity
-          onPress={() => (currentStep == 3 ? login() : nextStep())}
+          onPress={() => (currentStep == 3 ? gotoLoginPage() : nextStep())}
           style={{
             ...styles.navigationBtn,
             backgroundColor: steps[currentStep].color,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   headerTxtContainer: {
     flexDirection: "row",
-    marginTop: -10,
+    marginTop: -30,
     width: "90%",
   },
   headerTxt: {
