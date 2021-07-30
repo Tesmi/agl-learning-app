@@ -1,5 +1,4 @@
 import React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -15,10 +14,16 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator headerMode="none" initialRouteName="Login">
-          <Stack.Screen name="SplashScreen" component={SplashScreen} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Register" component={Register} />
+        <Stack.Navigator headerMode="none" initialRouteName="Register">
+          <Stack.Screen name="SplashScreen">
+            {({ navigation }) => <SplashScreen navigation={navigation} />}
+          </Stack.Screen>
+          <Stack.Screen name="Login">
+            {({ navigation }) => <Login navigation={navigation} />}
+          </Stack.Screen>
+          <Stack.Screen name="Register">
+            {({ navigation }) => <Register navigation={navigation} />}
+          </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     );

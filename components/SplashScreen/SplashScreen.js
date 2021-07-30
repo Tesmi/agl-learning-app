@@ -9,7 +9,7 @@ import {
   StatusBar,
 } from "react-native";
 
-export default function SplashScreen() {
+export default function SplashScreen(props) {
   const [currentStep, setCurrentStep] = useState(0);
   const [steps, setSteps] = useState([
     {
@@ -51,7 +51,7 @@ export default function SplashScreen() {
   };
 
   const gotoLoginPage = () => {
-    console.log("Heck i am working");
+    props.navigation.navigate("Login");
   };
 
   return (
@@ -61,8 +61,8 @@ export default function SplashScreen() {
         <Text style={{ ...styles.headerTxt, color: steps[currentStep].color }}>
           AGL LEARNING APP
         </Text>
-
-        <View
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("Login")}
           style={{
             ...styles.skipTxtContainer,
             borderColor: steps[currentStep].color,
@@ -76,7 +76,7 @@ export default function SplashScreen() {
           >
             Skip
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <Image
         source={steps[currentStep].image}

@@ -1,43 +1,26 @@
-import { StyleSheet, Dimensions } from "react-native";
-
-const windowWidth = Dimensions.get("window").width;
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
+  contentArea: {
+    flex: 11,
+    backgroundColor: "#242033",
+  },
+  headingContainer: {
+    paddingLeft: 20,
+  },
+  headingTxt: {
+    fontSize: 35,
+    color: "#E9E7EC",
+    fontWeight: "600",
+  },
+  mainContentContainer: {
     alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 20,
-  },
-  image: {
-    width: 0.7 * windowWidth,
-    height: 0.65 * windowWidth,
-  },
-  hr: {
-    borderBottomWidth: 1,
-    marginTop: 5,
-    width: "89%",
-    borderColor: "#5f5a73",
-  },
-  headerTxt: {
-    fontFamily: "BoldKei-nRAWP",
-    fontSize: 28,
-    marginRight: "65%",
-    marginTop: 25,
-    color: "#fcfcfc",
-  },
-  secondaryTxt: {
-    color: "#617B8F",
-    fontSize: 15,
-    marginLeft: -2,
   },
   inputContainer: {
-    width: "90%",
     marginTop: 10,
+    width: "90%",
   },
   input: {
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-    borderRadius: 12,
     marginTop: 10,
   },
   coverInputBorder: {
@@ -46,7 +29,33 @@ const styles = StyleSheet.create({
     zIndex: 4,
     marginTop: -2,
   },
-  loginBtn: {
+  selectorContainer: {
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 15,
+    marginTop: 10,
+    flexDirection: "row",
+  },
+  selectorHeaderContainer: {
+    width: "26%",
+  },
+  selectorContentContainer: {
+    flexDirection: "row",
+    width: "70%",
+  },
+  selectorContent: {
+    padding: 3,
+    width: "50%",
+    borderColor: "#e6edea",
+    borderWidth: 1,
+  },
+  selectorTxt: {
+    fontWeight: "bold",
+    alignSelf: "center",
+    fontSize: 17,
+  },
+
+  register: {
     marginTop: 30,
     width: "50%",
     alignItems: "center",
@@ -58,13 +67,19 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
   },
-  loginBtnTxt: {
+  registerTxt: {
     color: "#222232",
     fontWeight: "bold",
     fontSize: 22,
   },
-  forgetPassword: {
-    marginTop: 7,
+  termsAndServiceNormal: {
+    marginTop: 13,
+    marginBottom: 3,
+    fontSize: 16,
+    color: "#E9E7EC",
+  },
+  termsAndServiceBold: {
+    fontSize: 15,
     color: "#00DFC0",
     fontWeight: "bold",
   },

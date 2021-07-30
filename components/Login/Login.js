@@ -12,13 +12,13 @@ import {
 import { TextInput } from "react-native-paper";
 import { styles, TextInputStyle } from "./styles";
 
-export default function Login() {
+export default function Login(props) {
   let [username, setUserName] = React.useState("");
   let [password, setPassword] = React.useState("");
   let [showPassword, setShowPassword] = React.useState(false);
 
   const LoginImage = require("../../assets/3094352.png");
-  const loginInputIconLeft = (
+  const emailIcon = (
     <TextInput.Icon
       name="email-outline"
       style={{ marginTop: 12 }}
@@ -26,7 +26,7 @@ export default function Login() {
       color="#fff"
     />
   );
-  const loginInputIconLeft2 = (
+  const showPasswordIcon = (
     <TextInput.Icon name="lock-outline" size={25} color="#fff" />
   );
 
@@ -46,11 +46,11 @@ export default function Login() {
           </View>
           <View style={styles.inputContainer}>
             <TextInput
-              left={loginInputIconLeft}
+              left={emailIcon}
               label="Email"
               value={username}
               theme={TextInputStyle}
-              underlineColor="transparent"
+              underlineColorAndroid="transparent"
               onChangeText={(username) => setUserName(username)}
               style={{ ...styles.input, backgroundColor: "#242033" }}
             />
@@ -58,7 +58,7 @@ export default function Login() {
 
             <TextInput
               secureTextEntry={showPassword ? false : true}
-              left={loginInputIconLeft2}
+              left={showPasswordIcon}
               right={
                 <TextInput.Icon
                   name={showPassword ? "eye-outline" : "eye-off-outline"}
@@ -70,7 +70,7 @@ export default function Login() {
               label="Password"
               value={password}
               theme={TextInputStyle}
-              underlineColor="transparent"
+              underlineColorAndroid="transparent"
               onChangeText={(password) => setPassword(password)}
               style={{ ...styles.input, backgroundColor: "#242033" }}
             />
@@ -89,7 +89,12 @@ export default function Login() {
       <View style={styles.footer}>
         <Text style={styles.footerTxt1}>Don't have an account? </Text>
         <TouchableOpacity>
-          <Text style={styles.footerTxt2}>Register</Text>
+          <Text
+            style={styles.footerTxt2}
+            onPress={() => props.navigation.navigate("Register")}
+          >
+            Register
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
