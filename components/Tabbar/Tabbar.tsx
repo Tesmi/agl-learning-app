@@ -5,19 +5,24 @@ import { Value, block, onChange, set, useCode } from "react-native-reanimated";
 import Tab from "./Tab";
 import Particules from "./Particules";
 import Weave from "./Weave";
-import Compass from "./icons/Compass";
-import Chat from "./icons/Chat";
-import Camera from "./icons/Camera";
+
+
 import Bell from "./icons/Bell";
-import User from "./icons/User";
+import LiveClasses from './icons/LiveClasses'
+import Dashboard from './icons/Dashboard'
+import Settings from './icons/Settings'
+import Schedule from './icons/Schedule'
+import Files from './icons/Files'
+
 import { DURATION, ICON_SIZE, PADDING, SEGMENT } from "./icons/Constants";
 
 const tabs = [
-  { icon: <Compass /> },
-  { icon: <Chat /> },
-  { icon: <Camera /> },
+  { icon: <Dashboard /> },
+  { icon: <LiveClasses /> },
+  { icon: <Files /> },
+  { icon: <Schedule /> },
   { icon: <Bell /> },
-  { icon: <User /> },
+  { icon: <Settings /> },
 ];
 const styles = StyleSheet.create({
   container: {
@@ -36,10 +41,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default () => {
+export default ({props}) => {
+
+  const clickHandler = (index) =>{
+    active.setValue(index)
+    // props.navigation.navigate("NotificationsScreen")
+  }
+
   const active = new Value<number>(0);
   const transition = withTransition(active, { duration: DURATION });
   const activeTransition = new Value(0);
+  
   useCode(
     () =>
       block([
@@ -55,7 +67,7 @@ export default () => {
           <View key={index} style={styles.tab}>
             <Weave {...{ active, transition, index }} />
             <Tab
-              onPress={() => active.setValue(index)}
+              onPress={() => clickHandler(index)}
               {...{ active, transition, index }}
             >
               {icon}

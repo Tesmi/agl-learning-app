@@ -6,8 +6,8 @@ export interface IconProps {
   active?: boolean;
 }
 
-const numberOfIcons = 5;
-const horizontalPadding = 48;
+const numberOfIcons = 6;
+const horizontalPadding = 40;
 export const DURATION = 450;
 export const PADDING = 16;
 export const SEGMENT = PixelRatio.roundToNearestPixel(width / numberOfIcons);

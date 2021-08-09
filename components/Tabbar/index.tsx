@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default () => (
-  <View style={styles.container}>
-    <Tabbar />
-  </View>
+export default (props) => (
+  // <View style={styles.container}>
+    <Tabbar props={props}/>
+  //  </View>
 );

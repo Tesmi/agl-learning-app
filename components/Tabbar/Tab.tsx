@@ -9,6 +9,7 @@ import Animated, {
 import { withTransition } from "react-native-redash";
 import { DURATION, ICON_SIZE } from "./icons/Constants";
 
+
 interface TabProps {
   children: ReactElement;
   onPress: () => void;

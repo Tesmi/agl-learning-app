@@ -131,12 +131,13 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagetranscoder:2.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp3:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.webkit:android-jsc:r245459@aar" level="project" />
-    <orderEntry type="library" name="Gradle: artifacts:react-native-reanimated:unspecified" level="project" />
     <orderEntry type="module" module-name="agl_learning_app.react-native-jitsi-meet" />
     <orderEntry type="module" module-name="agl_learning_app.react-native-community_masked-view" />
     <orderEntry type="module" module-name="agl_learning_app.react-native-gesture-handler" />
+    <orderEntry type="module" module-name="agl_learning_app.react-native-reanimated" />
     <orderEntry type="module" module-name="agl_learning_app.react-native-safe-area-context" />
     <orderEntry type="module" module-name="agl_learning_app.react-native-screens" />
+    <orderEntry type="module" module-name="agl_learning_app.react-native-svg" />
     <orderEntry type="module" module-name="agl_learning_app.react-native-vector-icons" />
   </component>
 </module>

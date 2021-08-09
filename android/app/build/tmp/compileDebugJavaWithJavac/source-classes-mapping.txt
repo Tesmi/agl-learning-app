@@ -1,0 +1,14 @@
+com/agl_learning_app/MainActivity.java
+ com.agl_learning_app.MainActivity
+com/agl_learning_app/MainApplication.java
+ com.agl_learning_app.MainApplication
+ com.agl_learning_app.MainApplication$1
+com/agl_learning_app/ReactNativeFlipper.java
+ com.agl_learning_app.ReactNativeFlipper
+ com.agl_learning_app.ReactNativeFlipper$1
+ com.agl_learning_app.ReactNativeFlipper$2
+ com.agl_learning_app.ReactNativeFlipper$2$1
+com/agl_learning_app/BuildConfig.java
+ com.agl_learning_app.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

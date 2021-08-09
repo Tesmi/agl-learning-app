@@ -1,10 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import Icon from "react-native-vector-icons/Ionicons";
 
 import { Text, View } from "react-native";
 
@@ -20,8 +17,6 @@ import StreamScreen from "./components/LiveStream/StreamScreen";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// const Tab = createMaterialBottomTabNavigator();
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -34,16 +29,47 @@ export default class App extends React.Component {
     return (
       <NavigationContainer>
         {this.state.token !== null ? (
-          <Tab.Navigator
-            tabBar={(props) => <TabBar {...props} />}
-            initialRouteName="Home"
-            activeColor="#fff"
-          >
-            <Tab.Screen name="HomeScreen" component={CircularLoader} />
-            <Tab.Screen name="SettingsScreen" component={CircularLoader} />
-          </Tab.Navigator>
+          <View style={{ flex: 12 }}>
+            <View style={{ flex: 11 }}>
+              <Tab.Navigator initialRouteName="HomeScreen" activeColor="#fff">
+                <Tab.Screen
+                  options={{ tabBarVisible: false }}
+                  name="HomeScreen"
+                  component={CircularLoader}
+                />
+                <Tab.Screen
+                  options={{ tabBarVisible: false }}
+                  name="LiveClassesScreen"
+                  component={CircularLoader}
+                />
+                <Tab.Screen
+                  options={{ tabBarVisible: false }}
+                  name="FilesScreen"
+                  component={CircularLoader}
+                />
+                <Tab.Screen
+                  options={{ tabBarVisible: false }}
+                  name="ScheduleScreen"
+                  component={Register}
+                />
+                <Tab.Screen
+                  options={{ tabBarVisible: false }}
+                  name="NotificationsScreen"
+                  component={Login}
+                />
+                <Tab.Screen
+                  options={{ tabBarVisible: false }}
+                  name="SettingsScreen"
+                  component={Login}
+                />
+              </Tab.Navigator>
+            </View>
+            <View style={{ flex: 1 }}>
+              <TabBar />
+            </View>
+          </View>
         ) : (
-          <Stack.Navigator headerMode="none" initialRouteName="Register">
+          <Stack.Navigator headerMode="none" initialRouteName="StreamScreen">
             <Stack.Screen name="SplashScreen">
               {({ navigation }) => <SplashScreen navigation={navigation} />}
             </Stack.Screen>
