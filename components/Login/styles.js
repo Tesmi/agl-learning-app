@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   },
   forgetPassword: {
     marginTop: 7,
+    marginBottom: 10,
     color: "#00DFC0",
     fontWeight: "bold",
   },

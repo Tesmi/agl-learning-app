@@ -1,4 +1,7 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const winWidth = Dimensions.get("window").width;
+const winHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   contentArea: {
@@ -32,18 +35,20 @@ const styles = StyleSheet.create({
   selectorContainer: {
     paddingTop: 12,
     paddingBottom: 12,
-    paddingLeft: 15,
+    paddingLeft: 10,
     marginTop: 10,
     flexDirection: "row",
   },
   selectorHeaderContainer: {
-    width: "26%",
+    flexDirection: "row",
+    width: "33%",
   },
   selectorContentContainer: {
     flexDirection: "row",
-    width: "70%",
+    width: "65%",
   },
   selectorContent: {
+    justifyContent: "center",
     padding: 3,
     width: "50%",
     borderColor: "#e6edea",
@@ -82,6 +87,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#00DFC0",
     fontWeight: "bold",
+    marginBottom: 10,
   },
   footer: {
     flex: 1,
@@ -98,6 +104,54 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#00DFC0",
     fontSize: 16,
+  },
+  modalContainer: {
+    backgroundColor: "#00000080",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modal: {
+    backgroundColor: "white",
+    borderRadius: 20,
+    width: winWidth * 0.85,
+    height: winHeight * 0.65,
+  },
+  modalHeading: {
+    width: winWidth * 0.85,
+    padding: 16,
+    borderTopLeftRadius: 20,
+    borderTopEndRadius: 20,
+    backgroundColor: "#2cc7a5",
+    alignItems: "center",
+  },
+  modalFooter: {
+    width: winWidth * 0.85,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    flex: 2,
+    flexDirection: "row",
+  },
+  modalBtn: {
+    width: "50%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  modalBtnTxt: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  listItem: {
+    width: "92%",
+    padding: 8,
+    marginTop: 3,
+    alignItems: "center",
+  },
+  listTxt: {
+    fontSize: 18,
+    color: "white",
   },
 });
 

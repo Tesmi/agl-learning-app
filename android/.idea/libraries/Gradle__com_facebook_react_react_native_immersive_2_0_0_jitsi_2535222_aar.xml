@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.react:react-native-immersive:2.0.0-jitsi-2535222@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c6e74d1dd311193a011929bf8357ccca/jetified-react-native-immersive-2.0.0-jitsi-2535222/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c6e74d1dd311193a011929bf8357ccca/jetified-react-native-immersive-2.0.0-jitsi-2535222/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c6e74d1dd311193a011929bf8357ccca/jetified-react-native-immersive-2.0.0-jitsi-2535222/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.react/react-native-immersive/2.0.0-jitsi-2535222/ecc7d1c5a6111afc3697f095c21a355ef52d1df8/react-native-immersive-2.0.0-jitsi-2535222-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
