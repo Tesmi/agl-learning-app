@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 export default class MainStackNav extends Component {
   render() {
     return (
-      <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="Register">
         <Stack.Screen name="SplashScreen">
           {({ navigation }) => <SplashScreen navigation={navigation} />}
         </Stack.Screen>

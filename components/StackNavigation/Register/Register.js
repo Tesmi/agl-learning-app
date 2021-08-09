@@ -11,6 +11,8 @@ import {
   Alert,
 } from "react-native";
 
+import { verifyInputs } from "./verifyInputs";
+
 import { TextInput } from "react-native-paper";
 import { styles, TextInputStyle } from "./styles";
 import Icon from "react-native-vector-icons/AntDesign";
@@ -191,7 +193,7 @@ export default class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullname: "",
+      fullname: "     ",
       email: "",
       contact: "",
       gender: "",
@@ -225,8 +227,14 @@ export default class Register extends React.Component {
     );
   };
 
-  register = () => {
-    console.log(this.state);
+  register = async () => {
+    const verifyInputsResult = await verifyInputs(this.state);
+
+    if (verifyInputsResult == true) {
+      console.log("can register");
+    } else {
+      console.log(verifyInputsResult);
+    }
   };
 
   render() {
