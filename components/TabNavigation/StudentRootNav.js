@@ -16,6 +16,10 @@ import SettingsScreen from "./StudentScreen/SettingsScreen/SettingsScreen";
 const Tab = createBottomTabNavigator();
 
 export default class StudentRootNav extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <View style={{ flex: 12 }}>
@@ -23,7 +27,13 @@ export default class StudentRootNav extends React.Component {
           <Tab.Navigator initialRouteName="HomeScreen" activeColor="#fff">
             <Tab.Screen
               name="HomeScreen"
-              component={HomeScreen}
+              children={(props) => (
+                <HomeScreen
+                  startStream={this.props.startStream}
+                  chengeUserInfo={this.props.chengeUserInfo}
+                  {...props}
+                />
+              )}
               options={{ tabBarVisible: false, unmountOnBlur: true }}
               listeners={({ navigation }) => ({
                 blur: () => navigation.setParams({ screen: undefined }),

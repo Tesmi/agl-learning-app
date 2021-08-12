@@ -153,6 +153,73 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "white",
   },
+
+  OTPHeadingContainer: {
+    marginTop: 10,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  OTPContainer: {
+    flex: 9,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  OTPBackIcon: {
+    fontSize: 30,
+    color: "#6D63FF",
+  },
+  OTPHeading: {
+    fontSize: 25,
+    paddingRight: 10,
+    fontWeight: "bold",
+    color: "#6D63FF",
+  },
+  OTPImg: {
+    width: winWidth,
+    height: winHeight * 0.34,
+  },
+  OTPSubHeading: {
+    width: "80%",
+    marginTop: 10,
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "teal",
+    textAlign: "center",
+  },
+  OTPEmail: {
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "orange",
+  },
+
+  OTPResendTxt: {
+    fontSize: 16,
+    color: "teal",
+  },
+  OTPFooter: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  OTPBtn: {
+    marginTop: 30,
+    width: 130,
+    alignItems: "center",
+    borderRadius: 26,
+    paddingTop: 10,
+    paddingBottom: 12,
+  },
+  OTPTxt: {
+    color: "#fff",
+    fontSize: 19,
+  },
+  textInputContainer: {
+    marginBottom: 20,
+  },
+  roundedTextInput: {
+    borderRadius: 10,
+    borderWidth: 4,
+  },
 });
 
 const TextInputStyle = {

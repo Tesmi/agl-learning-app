@@ -46,7 +46,7 @@ export default ({props}) => {
 
   const clickHandler = (index, screenName) =>{
     active.setValue(index)
-    Navigation.navigate(screenName, {userName: 'Lucy'})
+    Navigation.navigate(screenName)
   }
 
   const active = new Value<number>(0);
