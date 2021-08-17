@@ -32,7 +32,6 @@ exports.verifyInputs = ({
     }
 
     if (!(gender == "male" || gender == "female")) {
-      console.log(gender);
       return "Please select a valid gender";
     }
 

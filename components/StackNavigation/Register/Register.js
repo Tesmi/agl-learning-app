@@ -55,7 +55,7 @@ async function verifyOTP() {
       "Verification complete, please wait...",
       ToastAndroid.SHORT
     );
-    this.setState({ registerProcessStarted: true });
+    this.setState({ registerProcessStarted: true, showOTPModal: false });
 
     await axios
       .post(`${config.uri}/public/registerUser`, {
@@ -270,7 +270,7 @@ function selectGradeComponent() {
                     >
                       <View>
                         <Text style={styles.listTxt}>
-                          {Object.keys(grade)[0]}
+                          {Object.keys(grade)[0].toString()}
                         </Text>
                       </View>
                     </TouchableHighlight>
@@ -438,24 +438,6 @@ export default class Register extends React.Component {
     resendOTP = resendOTP.bind(this);
     startOTPCountDown = startOTPCountDown.bind(this);
     afterRegistration = afterRegistration.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      fullname: "tushar maurya",
-      email: "tusharmaurya2001@gmail.com",
-      contact: "7054122817",
-      gender: "male",
-      accountType: "teacher",
-      grade: "",
-      board: "",
-      password: "T_M@2001q",
-      confirmPassword: "T_M@2001q",
-      teacherKey: "h08ZGTbv17mobcn8nkUC",
-      validOTP: "",
-      userOTP: "",
-      OTPTimer: 45,
-    });
   }
 
   icon = (name) => {

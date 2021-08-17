@@ -7,7 +7,12 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  ActivityIndicator,
+  ToastAndroid,
 } from "react-native";
+
+import axios from "axios";
+import config from "../../../config";
 
 import { TextInput } from "react-native-paper";
 import { styles, TextInputStyle } from "./styles";
@@ -16,6 +21,7 @@ export default function Login(props) {
   let [username, setUserName] = React.useState("");
   let [password, setPassword] = React.useState("");
   let [showPassword, setShowPassword] = React.useState(false);
+  let [loginStart, setloginStart] = React.useState(false);
 
   const LoginImage = require("../../../assets/3094352.png");
   const emailIcon = (
@@ -29,6 +35,52 @@ export default function Login(props) {
   const showPasswordIcon = (
     <TextInput.Icon name="lock-outline" size={25} color="#fff" />
   );
+
+  function startLogin() {
+    setloginStart(true);
+
+    if (!username || !password) {
+      setloginStart(false);
+      ToastAndroid.show(
+        "Invalid username/email or password",
+        ToastAndroid.SHORT
+      );
+    }
+
+    if (username.trim() == "" || password.trim() == "") {
+      setloginStart(false);
+      ToastAndroid.show(
+        "Invalid username/email or password",
+        ToastAndroid.SHORT
+      );
+    }
+
+    axios
+      .get(`${config.uri}/public/login`, {
+        params: {
+          user: username,
+          password: password,
+        },
+      })
+      .then((e) => {
+        if (e.data.status == "success") {
+          setloginStart(false);
+          props.storeToken(e.data.data.refreshToken);
+          props.pushAccountType(e.data.data.accountType);
+          props.pushApiKey(e.data.data.accessToken);
+        } else {
+          setloginStart(false);
+          ToastAndroid.show(
+            e.data.status + ": " + e.data.msg,
+            ToastAndroid.SHORT
+          );
+        }
+      })
+      .catch((err) => {
+        setloginStart(false);
+        ToastAndroid.show("Network error, try again later", ToastAndroid.SHORT);
+      });
+  }
 
   return (
     <SafeAreaView style={{ flex: 11, backgroundColor: "#242033" }}>
@@ -47,7 +99,7 @@ export default function Login(props) {
           <View style={styles.inputContainer}>
             <TextInput
               left={emailIcon}
-              label="Email"
+              label="Email or Username"
               value={username}
               theme={TextInputStyle}
               underlineColorAndroid="transparent"
@@ -76,9 +128,17 @@ export default function Login(props) {
             />
             <View style={styles.coverInputBorder} />
           </View>
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity
+            onPress={() => startLogin()}
+            disabled={loginStart}
+            style={styles.loginBtn}
+          >
             <View>
-              <Text style={styles.loginBtnTxt}>Login</Text>
+              {loginStart ? (
+                <ActivityIndicator color="#222232" />
+              ) : (
+                <Text style={styles.loginBtnTxt}>Login</Text>
+              )}
             </View>
           </TouchableOpacity>
           <TouchableOpacity>

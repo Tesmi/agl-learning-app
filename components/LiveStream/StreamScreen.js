@@ -1,4 +1,5 @@
 import React from "react";
+import { BackHandler, Alert } from "react-native";
 import JitsiMeet, { JitsiMeetView } from "react-native-jitsi-meet";
 
 export default class StreamScreen extends React.Component {
@@ -10,8 +11,31 @@ export default class StreamScreen extends React.Component {
     };
   }
 
+  backAction = () => {
+    Alert.alert("Hold on!", "Are you sure you want to end call?", [
+      {
+        text: "Cancel",
+        onPress: () => null,
+        style: "cancel",
+      },
+      {
+        text: "YES",
+        onPress: () => {
+          JitsiMeet.endCall();
+          this.props.stopStream();
+        },
+      },
+    ]);
+    return true;
+  };
+
   async componentDidMount() {
-    const url = "https://jitsi.aglofficial.com/AGL-LEARNING";
+    this.backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      this.backAction
+    );
+
+    const url = this.props.url;
     const userInfo = {
       displayName: this.props.info.username,
       email: this.props.info.email,
@@ -20,9 +44,12 @@ export default class StreamScreen extends React.Component {
     JitsiMeet.call(url, userInfo);
   }
 
+  componentWillUnmount() {
+    this.backHandler.remove();
+  }
+
   onConferenceTerminated(nativeEvent) {
     /* Conference terminated event */
-    console.log("Conference terminated event");
     JitsiMeet.endCall();
     this.props.stopStream();
   }
@@ -33,12 +60,10 @@ export default class StreamScreen extends React.Component {
     setTimeout(() => {
       this.setState({ showJitsi: true });
     }, 100);
-    console.log("Someone is joined");
   }
 
   onConferenceWillJoin(nativeEvent) {
     /* Conference will join event */
-    console.log("Someone will join");
   }
 
   render() {

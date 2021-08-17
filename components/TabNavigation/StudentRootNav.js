@@ -2,16 +2,15 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
 
-import TabBar from "./StudentScreen/Tabbar/index";
+import TabBar from "./StudentScreen/TabbarStudent/index";
 
 //Importing Screens
 
-import HomeScreen from "./StudentScreen/HomeScreen/HomeScreen";
-import LiveClassesScreen from "./StudentScreen/LiveClassesScreen/LiveClassesScreen";
+import HomeScreen from "./HomeScreen/HomeScreen";
 import FilesScreen from "./StudentScreen/FilesScreen/FilesScreen";
 import ScheduleScreen from "./StudentScreen/ScheduleScreen/ScheduleScreen";
 import NotificationsScreen from "./StudentScreen/NotificationsScreen/NotificationsScreen";
-import SettingsScreen from "./StudentScreen/SettingsScreen/SettingsScreen";
+import SettingsScreen from "./SettingsScreen/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,12 +23,14 @@ export default class StudentRootNav extends React.Component {
     return (
       <View style={{ flex: 12 }}>
         <View style={{ flex: 11 }}>
-          <Tab.Navigator initialRouteName="HomeScreen" activeColor="#fff">
+          <Tab.Navigator initialRouteName="SettingsScreen" activeColor="#fff">
             <Tab.Screen
               name="HomeScreen"
               children={(props) => (
                 <HomeScreen
-                  startStream={this.props.startStream}
+                  changeURL={(url) => this.props.changeURL(url)}
+                  startStream={() => this.props.startStream()}
+                  token={this.props.token}
                   chengeUserInfo={this.props.chengeUserInfo}
                   {...props}
                 />
@@ -39,47 +40,63 @@ export default class StudentRootNav extends React.Component {
                 blur: () => navigation.setParams({ screen: undefined }),
               })}
             />
-            <Tab.Screen
-              name="LiveClassesScreen"
-              component={LiveClassesScreen}
-              options={{ tabBarVisible: false, unmountOnBlur: true }}
-              listeners={({ navigation }) => ({
-                blur: () => navigation.setParams({ screen: undefined }),
-              })}
-            />
 
             <Tab.Screen
               name="FilesScreen"
-              component={FilesScreen}
               options={{ tabBarVisible: false, unmountOnBlur: true }}
               listeners={({ navigation }) => ({
                 blur: () => navigation.setParams({ screen: undefined }),
               })}
-            />
+            >
+              {({ navigation }) => (
+                <FilesScreen navigation={navigation} token={this.props.token} />
+              )}
+            </Tab.Screen>
             <Tab.Screen
               name="ScheduleScreen"
-              component={ScheduleScreen}
               options={{ tabBarVisible: false, unmountOnBlur: true }}
               listeners={({ navigation }) => ({
                 blur: () => navigation.setParams({ screen: undefined }),
               })}
-            />
+            >
+              {({ navigation }) => (
+                <ScheduleScreen
+                  changeURL={(url) => this.props.changeURL(url)}
+                  startStream={() => this.props.startStream()}
+                  navigation={navigation}
+                  token={this.props.token}
+                />
+              )}
+            </Tab.Screen>
             <Tab.Screen
               name="NotificationsScreen"
-              component={NotificationsScreen}
               options={{ tabBarVisible: false, unmountOnBlur: true }}
               listeners={({ navigation }) => ({
                 blur: () => navigation.setParams({ screen: undefined }),
               })}
-            />
+            >
+              {({ navigation }) => (
+                <NotificationsScreen
+                  navigation={navigation}
+                  token={this.props.token}
+                />
+              )}
+            </Tab.Screen>
             <Tab.Screen
               name="SettingsScreen"
-              component={SettingsScreen}
               options={{ tabBarVisible: false, unmountOnBlur: true }}
               listeners={({ navigation }) => ({
                 blur: () => navigation.setParams({ screen: undefined }),
               })}
-            />
+            >
+              {({ navigation }) => (
+                <SettingsScreen
+                  navigation={navigation}
+                  token={this.props.token}
+                  removeAccessToken={() => this.props.removeAccessToken()}
+                />
+              )}
+            </Tab.Screen>
           </Tab.Navigator>
         </View>
         <View style={{ flex: 1 }}>
