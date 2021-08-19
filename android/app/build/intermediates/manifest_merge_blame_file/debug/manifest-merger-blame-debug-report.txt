@@ -75,50 +75,50 @@
 36-->[com.facebook.react:react-native-calendar-events:1.7.3-jitsi-2535222] /home/tesmi/.gradle/caches/transforms-2/files-2.1/3abab9fe639175fca6f2f047da967876/jetified-react-native-calendar-events-1.7.3-jitsi-2535222/AndroidManifest.xml:12:22-69
 37
 38    <application
-38-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:14:5-32:19
+38-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:14:5-33:19
 39        android:name="com.agl_learning_app.MainApplication"
 39-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:15:7-38
 40        android:allowBackup="true"
-40-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:19:7-33
+40-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:20:7-33
 41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 41-->[androidx.core:core:1.1.0] /home/tesmi/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/AndroidManifest.xml:24:18-86
 42        android:debuggable="true"
 43        android:icon="@mipmap/ic_launcher"
-43-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:17:7-41
+43-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:18:7-41
 44        android:label="@string/app_name"
-44-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:16:7-39
+44-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:17:7-39
 45        android:roundIcon="@mipmap/ic_launcher_round"
-45-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:18:7-52
+45-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:19:7-52
 46        android:supportsRtl="true"
 46-->[org.jitsi.react:jitsi-meet-sdk:2.4.0] /home/tesmi/.gradle/caches/transforms-2/files-2.1/e4ff21a421d4891233ffc930f462f1ae/jetified-jitsi-meet-sdk-2.4.0/AndroidManifest.xml:34:9-35
 47        android:theme="@style/AppTheme"
-47-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:20:7-38
+47-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:21:7-38
 48        android:usesCleartextTraffic="true" >
-48-->/home/tesmi/Desktop/agl-learning-app/android/app/src/debug/AndroidManifest.xml:8:9-44
+48-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:16:7-42
 49        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 49-->/home/tesmi/Desktop/agl-learning-app/android/app/src/debug/AndroidManifest.xml:11:9-86
 49-->/home/tesmi/Desktop/agl-learning-app/android/app/src/debug/AndroidManifest.xml:11:19-83
 50        <activity
-50-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:21:7-31:18
+50-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:22:7-32:18
 51            android:name="com.agl_learning_app.MainActivity"
-51-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:22:9-37
+51-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:23:9-37
 52            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-52-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:24:9-86
+52-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:25:9-86
 53            android:label="@string/app_name"
-53-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:23:9-41
+53-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:24:9-41
 54            android:launchMode="singleTask"
-54-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:25:9-40
+54-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:26:9-40
 55            android:windowSoftInputMode="adjustResize" >
-55-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:26:9-51
+55-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:27:9-51
 56            <intent-filter>
-56-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:27:9-30:25
+56-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:28:9-31:25
 57                <action android:name="android.intent.action.MAIN" />
-57-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:28:13-65
-57-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:28:21-62
+57-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:29:13-65
+57-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:29:21-62
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:29:13-73
-59-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:29:23-70
+59-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:30:13-73
+59-->/home/tesmi/Desktop/agl-learning-app/android/app/src/main/AndroidManifest.xml:30:23-70
 60            </intent-filter>
 61        </activity>
 62

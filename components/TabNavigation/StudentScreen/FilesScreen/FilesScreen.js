@@ -39,7 +39,7 @@ function DownloadStartedModal() {
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <Text style={{ ...styles.modalText, fontSize: 19 }}>
-            Preparing Download
+            Downloading File
           </Text>
           <ActivityIndicator size={"large"} />
         </View>
