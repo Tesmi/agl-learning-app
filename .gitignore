@@ -6,6 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+android/app/build/
+
 *.hprof
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
