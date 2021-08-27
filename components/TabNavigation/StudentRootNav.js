@@ -23,7 +23,7 @@ export default class StudentRootNav extends React.Component {
     return (
       <View style={{ flex: 12 }}>
         <View style={{ flex: 11 }}>
-          <Tab.Navigator initialRouteName="SettingsScreen" activeColor="#fff">
+          <Tab.Navigator initialRouteName="HomeScreen" activeColor="#fff">
             <Tab.Screen
               name="HomeScreen"
               children={(props) => (
