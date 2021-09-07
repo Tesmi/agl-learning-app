@@ -123,7 +123,6 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
-
     dexOptions {
         javaMaxHeapSize "4G"
     }
@@ -195,14 +194,20 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    configurations.all {
+        resolutionStrategy {
+            force "com.facebook.soloader:soloader:0.8.2"
+        }
+    }
 
 
     implementation(project(':react-native-jitsi-meet')) {
     //   exclude group: 'com.facebook.react',module:'react-native-locale-detector'
       exclude group: 'com.facebook.react',module:'react-native-vector-icons'
       // Un-comment below if using hermes
-      //exclude group: 'com.facebook',module:'hermes'
+      // exclude group: 'com.facebook',module:'hermes'
       // Un-comment any packages below that you have added to your project to prevent `duplicate_classes` errors
       exclude group: 'com.facebook.react',module:'react-native-community-async-storage'
       //exclude group: 'com.facebook.react',module:'react-native-community_netinfo'
