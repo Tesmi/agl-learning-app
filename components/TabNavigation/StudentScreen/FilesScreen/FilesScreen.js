@@ -178,6 +178,10 @@ export default class FilesScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Files" />
           </Appbar.Header>
         </View>
@@ -206,6 +210,10 @@ export default class FilesScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Files" />
           </Appbar.Header>
         </View>
@@ -327,6 +335,10 @@ export default class FilesScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Files" />
           </Appbar.Header>
         </View>

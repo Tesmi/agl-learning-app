@@ -6,12 +6,17 @@ import CircularLoader from "../Loader/CircularLoader";
 import SplashScreen from "./SplashScreen/SplashScreen";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 const Stack = createStackNavigator();
 
 export default class MainStackNav extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.activateBottomTab();
   }
 
   render() {
@@ -41,6 +46,9 @@ export default class MainStackNav extends Component {
               navigation={navigation}
             />
           )}
+        </Stack.Screen>
+        <Stack.Screen name="ForgotPassword">
+          {({ navigation }) => <ForgotPassword navigation={navigation} />}
         </Stack.Screen>
       </Stack.Navigator>
     );

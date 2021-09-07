@@ -121,9 +121,12 @@ export default class HomeScreen extends Component {
           barStyle={"light-content"}
           backgroundColor="#6200ee"
         />
-
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Dashboard" />
           </Appbar.Header>
         </View>
@@ -153,6 +156,10 @@ export default class HomeScreen extends Component {
 
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Dashboard" />
           </Appbar.Header>
         </View>
@@ -355,14 +362,7 @@ export default class HomeScreen extends Component {
               />
             </View>
 
-            <View
-              style={{
-                marginTop: 10,
-                backgroundColor: "white",
-                alignItems: "center",
-                paddingTop: 10,
-              }}
-            >
+            <View style={styles.socialContainerTxt}>
               <Text
                 style={{ fontSize: 20, fontWeight: "bold", color: "orange" }}
               >

@@ -96,6 +96,8 @@ exports.sendOTP = (email, fullname, otp) => {
   let msg = `<!DOCTYPE html><html lang="en"><body><h2> Welcome ${fullname} to AGL-Learning-App your otp is</h2><h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">${otp}</h2></body></html>`;
   let sub = "OTP from AGL-Learning-App";
   try {
-    axios.get(`${config.uri}/public/sendOTP`, { params: { msg, sub, email } });
+    axios.get(`${config.uri}/public/sendEmail`, {
+      params: { msg, sub, email },
+    });
   } catch (error) {}
 };

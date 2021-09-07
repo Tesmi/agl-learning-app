@@ -11,7 +11,7 @@ import * as Navigation from '../../TabNavRef'
 import Bell from "./icons/Bell";
 import LiveClasses from './icons/LiveClasses'
 import Dashboard from './icons/Dashboard'
-import Settings from './icons/Settings'
+import Box from './icons/Box'
 import Schedule from './icons/Schedule'
 import Files from './icons/Files'
 
@@ -22,7 +22,7 @@ const tabs = [
   { icon: [<Files />, "FilesScreen"]},
   { icon: [<Schedule />,"ScheduleScreen"] },
   { icon: [<Bell />,"NotificationScreen"] },
-  { icon: [<Settings />,"SettingsScreen"] },
+  { icon: [<Box />,"RecycleScreen"] },
 ];
 const styles = StyleSheet.create({
   container: {

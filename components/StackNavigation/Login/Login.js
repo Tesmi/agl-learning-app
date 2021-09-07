@@ -141,8 +141,10 @@ export default function Login(props) {
               )}
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.forgetPassword}>Forget Password?</Text>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("ForgotPassword")}
+          >
+            <Text style={styles.forgetPassword}>Forgot Password?</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>

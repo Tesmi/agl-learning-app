@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     borderWidth: 2.2,
     padding: 10,
+    marginBottom: 10,
   },
 
   heading: {

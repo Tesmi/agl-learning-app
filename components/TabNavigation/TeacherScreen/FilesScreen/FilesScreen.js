@@ -240,6 +240,13 @@ export default class FilesScreen extends Component {
             );
             return this.resetState();
           }
+        })
+        .catch((err) => {
+          ToastAndroid.show(
+            "Something went wrong, try again later",
+            ToastAndroid.SHORT
+          );
+          return this.resetState();
         });
     } catch (error) {
       this.resetState();
@@ -258,6 +265,12 @@ export default class FilesScreen extends Component {
       if (!res.uri || !res.type || !res.name || !res.size) {
         return ToastAndroid.show("Invalid file", ToastAndroid.SHORT);
       }
+      if (parseInt(res.size) > 50000000) {
+        return ToastAndroid.show(
+          "Files cannot be bigger than 50MB",
+          ToastAndroid.SHORT
+        );
+      }
 
       this.setState({
         canUpload: true,
@@ -266,8 +279,8 @@ export default class FilesScreen extends Component {
       });
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        return ToastAndroid.show("No file selected", ToastAndroid.SHORT);
         // User cancelled the picker, exit any dialogs or menus and move on
+        return ToastAndroid.show("No file selected", ToastAndroid.SHORT);
       } else {
         this.resetState();
         return ToastAndroid.show("Error: can't read files", ToastAndroid.SHORT);
@@ -428,6 +441,10 @@ export default class FilesScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Files" />
           </Appbar.Header>
         </View>
@@ -456,6 +473,10 @@ export default class FilesScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Files" />
           </Appbar.Header>
         </View>

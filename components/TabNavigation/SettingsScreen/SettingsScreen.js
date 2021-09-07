@@ -8,17 +8,9 @@ import {
   ToastAndroid,
   Alert,
   StatusBar,
+  BackHandler,
 } from "react-native";
-import {
-  Appbar,
-  TextInput,
-  List,
-  Button,
-  Headline,
-  Subheading,
-  Caption,
-  Paragraph,
-} from "react-native-paper";
+import { Appbar, TextInput, List, Button } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "./styles";
 import axios from "axios";
@@ -52,8 +44,21 @@ export default class SettingsScreen extends Component {
   }
 
   componentDidMount() {
+    this.props.hideBottomTab();
+    this.backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      this.backAction
+    );
     this.getSettingsData();
   }
+
+  componentWillUnmount() {
+    this.backHandler.remove();
+  }
+
+  backAction = () => {
+    this.props.showBottomTab();
+  };
 
   async updateProfile() {
     this.setState({ updatingAccount: true });
@@ -411,7 +416,18 @@ export default class SettingsScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Settings" />
+            <Appbar.Action
+              icon="close"
+              onPress={() => {
+                this.props.showBottomTab();
+                this.props.navigation.navigate("root");
+              }}
+            />
           </Appbar.Header>
         </View>
         <View
@@ -439,7 +455,18 @@ export default class SettingsScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Settings" />
+            <Appbar.Action
+              icon="close"
+              onPress={() => {
+                this.props.showBottomTab();
+                this.props.navigation.navigate("root");
+              }}
+            />
           </Appbar.Header>
         </View>
         <ScrollView

@@ -17,28 +17,27 @@ export default function SplashScreen(props) {
       title: "Better Education",
       color: "#0c6333",
       description:
-        "Maecenas elementum est ut nulla blandit ultrices. Nunc quis ipsum urna. Aenean euismod sollicitudin nunc, ut rutrum magna ultricies eget",
+        "With Advanced Growth Learning, you are presented with teachers who are masters of their fields, not only will you get the knowledge from textbooks but also from real-life experiences.",
     },
     {
       image: require("../../../assets/2.png"),
       title: "Visualize Concepts",
       color: "#de553a",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat elementum laoreet. Nunc id quam et eros molestie finibus",
+        "A concept learned through mapping of images is retained in our mind for a longer period. We believe at providing a clear understanding of the concepts through  visualising the topics so that students can get a better explanation on any topic.",
     },
     {
       image: require("../../../assets/3.png"),
       title: "Time Management",
       color: "#FF4e5a",
-      description:
-        "Mauris vulputate interdum nibh vel tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas",
+      description: `The key is not spending time, but investing it. With this belief we aim to provide you smooth and hassle free application experience. We care for your time and value it.`,
     },
     {
       image: require("../../../assets/4.png"),
       title: "24/7 Doubt Solving",
       color: "#A838D7",
       description:
-        "Mauris vulputate interdum nibh vel tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas",
+        "We believe that the doubt should not thrive in any mind for so long, go ahead with the 24/7 doubt solving feature for an instant and hassle free doubt clearing experience.",
     },
   ]);
 

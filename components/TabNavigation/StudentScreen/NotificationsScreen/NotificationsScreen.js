@@ -5,20 +5,11 @@ import {
   SafeAreaView,
   ActivityIndicator,
   ScrollView,
-  ToastAndroid,
   StatusBar,
   Image,
 } from "react-native";
 
-import {
-  Appbar,
-  TextInput,
-  List,
-  Button,
-  Subheading,
-  Card,
-  Paragraph,
-} from "react-native-paper";
+import { Appbar, Subheading, Card, Paragraph } from "react-native-paper";
 
 import axios from "axios";
 import styles from "./styles";
@@ -66,6 +57,10 @@ export default class NotificationsScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Notifications" />
           </Appbar.Header>
         </View>
@@ -94,7 +89,11 @@ export default class NotificationsScreen extends Component {
         />
         <View>
           <Appbar.Header>
-            <Appbar.Content title="Files" />
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
+            <Appbar.Content title="Notifications" />
           </Appbar.Header>
         </View>
         <ScrollView
@@ -152,6 +151,10 @@ export default class NotificationsScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Notifications" />
           </Appbar.Header>
         </View>

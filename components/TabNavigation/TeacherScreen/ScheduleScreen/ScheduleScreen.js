@@ -298,6 +298,10 @@ export default class ScheduleScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Schedules" />
           </Appbar.Header>
         </View>
@@ -326,6 +330,10 @@ export default class ScheduleScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Schedules" />
           </Appbar.Header>
         </View>

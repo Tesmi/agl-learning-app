@@ -15,6 +15,7 @@ import {
   ActivityIndicator,
   Image,
   ToastAndroid,
+  Linking,
 } from "react-native";
 import OTPTextView from "react-native-otp-textinput";
 
@@ -749,7 +750,11 @@ export default class Register extends React.Component {
               <Text style={styles.termsAndServiceNormal}>
                 By creating an account you accept our
               </Text>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(`${config.uri}/terms_and_conditions`)
+                }
+              >
                 <Text style={styles.termsAndServiceBold}>
                   Terms & Conditions
                 </Text>

@@ -1,18 +1,10 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
 import Tabbar from "./Tabbar";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#7DE3B6",
-    justifyContent: "flex-end",
-  },
-});
-
 export default (props) => (
-  // <View style={styles.container}>
+  <View style={{opacity: props.opacity, height: props.height}}>
     <Tabbar props={props}/>
-  //  </View>
+  </View>
 );

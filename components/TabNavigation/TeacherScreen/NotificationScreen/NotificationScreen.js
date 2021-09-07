@@ -233,6 +233,10 @@ export default class NotificationScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Notifications" />
           </Appbar.Header>
         </View>
@@ -261,6 +265,10 @@ export default class NotificationScreen extends Component {
         />
         <View>
           <Appbar.Header>
+            <Appbar.Action
+              icon="menu"
+              onPress={() => this.props.navigation.openDrawer()}
+            />
             <Appbar.Content title="Notifications" />
           </Appbar.Header>
         </View>
@@ -360,7 +368,7 @@ export default class NotificationScreen extends Component {
                   <Text
                     style={{ color: "gray", fontSize: 17, marginBottom: 10 }}
                   >
-                    NO CLASS IS SCHEDULED BY YOU
+                    No Notification is posted by you.
                   </Text>
                 </View>
               ) : (

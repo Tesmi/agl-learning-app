@@ -4,7 +4,7 @@ import { Colors, ICON_SIZE, IconProps } from "./Constants";
 
 export default ({ active }: IconProps) => {
   return (
-    <Svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 20 22">
+    <Svg width={ICON_SIZE - 1} height={ICON_SIZE} viewBox="0 0 22 20">
       <G
         stroke={active ? Colors.primary : Colors.border}
         strokeWidth={2}

@@ -15,6 +15,6 @@ export const ICON_SIZE = SEGMENT - horizontalPadding;
 
 
 export const Colors = {
-  primary: "#0AC66F",
+  primary: "#6200ee",
   border: "#616164",
 };

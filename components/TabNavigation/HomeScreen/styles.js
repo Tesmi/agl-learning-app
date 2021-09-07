@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   imageContainer: {
-    borderRadius: 6,
+    borderTopEndRadius: 6,
+    borderTopStartRadius: 6,
     backgroundColor: "white",
     marginTop: 10,
     flex: 1,
@@ -46,6 +47,8 @@ const styles = StyleSheet.create({
     height: 140,
   },
   centeredContainer: {
+    borderBottomEndRadius: 6,
+    borderBottomStartRadius: 6,
     flexDirection: "row",
     flex: 1,
     justifyContent: "space-evenly",
@@ -57,8 +60,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "red",
   },
+  socialContainerTxt: {
+    borderTopEndRadius: 6,
+    borderTopStartRadius: 6,
+    marginTop: 10,
+    backgroundColor: "white",
+    alignItems: "center",
+    paddingTop: 10,
+  },
   socialContainer: {
-    borderRadius: 6,
+    borderBottomEndRadius: 6,
+    borderBottomStartRadius: 6,
     backgroundColor: "white",
     flexDirection: "row",
     justifyContent: "space-evenly",
