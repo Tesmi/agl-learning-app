@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, ToastAndroid, Dimensions } from "react-native";
+import { View, ToastAndroid } from "react-native";
 import { navigationRef } from "./components/TabNavigation/TabNavRef";
 
 //Importing components

@@ -21,6 +21,7 @@ import {
   Subheading,
   Caption,
   Paragraph,
+  TextInput,
 } from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import RNFetchBlob from "rn-fetch-blob";
@@ -54,13 +55,30 @@ export default class FilesScreen extends Component {
     this.state = {
       loading: true,
       files: null,
+      filteredData: null,
       fileDownloading: false,
+      searchTxt: "",
     };
     DownloadStartedModal = DownloadStartedModal.bind(this);
   }
 
   componentDidMount() {
     this.getAllFiles();
+  }
+
+  search(searchTxt) {
+    this.setState({ searchTxt });
+
+    let txt = searchTxt.toLowerCase();
+    let filteredData = this.state.files.filter(function (item) {
+      return (
+        item.FileName.toLowerCase().includes(txt) ||
+        item.Description.toLowerCase().includes(txt)
+      );
+    });
+
+    this.setState({ filteredData: filteredData });
+    // console.log(searchTxt);
   }
 
   async getAllFiles() {
@@ -76,7 +94,11 @@ export default class FilesScreen extends Component {
       .get(`${config.uri}/api/getAllFilesStudent`, head)
       .then((e) => {
         if (e.data.status == "success") {
-          this.setState({ files: e.data.data.files, loading: false });
+          this.setState({
+            files: e.data.data.files,
+            filteredData: e.data.data.files,
+            loading: false,
+          });
         } else {
           this.setState({ loading: false });
         }
@@ -225,6 +247,29 @@ export default class FilesScreen extends Component {
             alignItems: "center",
           }}
         >
+          <View style={{ ...styles.FileContainer }}>
+            <View
+              style={{
+                flex: 1,
+                alignItems: "center",
+                flexDirection: "row",
+              }}
+            >
+              <TextInput
+                left={
+                  <TextInput.Icon
+                    name="file-search-outline"
+                    color="gray"
+                    size={24}
+                  />
+                }
+                onChangeText={(searchTxt) => this.search(searchTxt)}
+                placeholder="Search"
+                value={this.state.searchTxt}
+                style={{ width: "100%", height: 45 }}
+              />
+            </View>
+          </View>
           <View style={{ ...styles.FileContainer, marginBottom: 15 }}>
             <Text style={styles.heading}>All Documents</Text>
             <View
@@ -233,7 +278,7 @@ export default class FilesScreen extends Component {
                 alignItems: "center",
               }}
             >
-              {this.state.files.map((obj, key) => (
+              {this.state.filteredData.map((obj, key) => (
                 <View key={key} style={styles.filesContainer}>
                   <View
                     style={{
