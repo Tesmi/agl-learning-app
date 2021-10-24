@@ -89,9 +89,7 @@ export default class DrawerContent extends Component {
               <View style={{ flexDirection: "row", marginTop: 15 }}>
                 <Avatar.Image
                   style={{ marginTop: 8 }}
-                  source={{
-                    uri: `https://ipsicon.io/${this.state.username}.png`,
-                  }}
+                  source={require("../../../assets/user.png")}
                   size={50}
                 />
                 <View
