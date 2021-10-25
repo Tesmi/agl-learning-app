@@ -10,6 +10,7 @@ import {
   ToastAndroid,
   Image,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 import {
   Appbar,
@@ -114,6 +115,14 @@ export default class HomeScreen extends Component {
   }
 
   render() {
+    const INSTAGRAM_LINK =
+      "https://instagram.com/advanced_growth_learning?utm_medium=copy_link";
+    const TWITTER_LINK =
+      "https://twitter.com/AGLLearningApp1?t=Vn-iVhBmJBtWs71RbgboWQ&s=08";
+    const YOUTUBE_LINK = "https://youtube.com/channel/UCbslRGzDj40M77kmGsIvolA";
+    const FACEBOOK_LINK =
+      "https://www.facebook.com/App-learning-app-111872387950409/";
+
     return this.state.loading ? (
       <SafeAreaView style={{ flex: 1 }}>
         <StatusBar
@@ -370,21 +379,44 @@ export default class HomeScreen extends Component {
               </Text>
             </View>
             <View style={styles.socialContainer}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(FACEBOOK_LINK).catch((err) => null)
+                }
+              >
                 <Image
                   source={require("../../../assets/facebook.png")}
                   style={styles.socialIcons}
                 />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(INSTAGRAM_LINK).catch((err) => null)
+                }
+              >
                 <Image
                   source={require("../../../assets/instagram.png")}
                   style={styles.socialIcons}
                 />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(TWITTER_LINK).catch((err) => null)
+                }
+              >
                 <Image
                   source={require("../../../assets/twitter.png")}
+                  style={styles.socialIcons}
+                />
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(YOUTUBE_LINK).catch((err) => null)
+                }
+              >
+                <Image
+                  source={require("../../../assets/youtube.png")}
                   style={styles.socialIcons}
                 />
               </TouchableOpacity>

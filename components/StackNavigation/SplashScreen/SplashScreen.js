@@ -148,7 +148,8 @@ const styles = StyleSheet.create({
     width: "90%",
   },
   headerTxt: {
-    fontFamily: "WelcomeSummer-GOqXP",
+    // fontFamily: "WelcomeSummer-GOqXP",
+    fontWeight: "bold",
     fontSize: 24,
   },
   skipTxtContainer: {
