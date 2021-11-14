@@ -221,7 +221,7 @@ export default class NotificationScreen extends Component {
       { "Ninth Standard": 9 },
       { "Tenth Standard": 10 },
       { "Eleventh Standard": 11 },
-      { "Twelth Standard": 12 },
+      { "Twelfth Standard": 12 },
     ];
 
     return this.state.loading ? (
