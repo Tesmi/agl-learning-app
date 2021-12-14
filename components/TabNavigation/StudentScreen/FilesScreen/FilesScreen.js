@@ -78,7 +78,6 @@ export default class FilesScreen extends Component {
     });
 
     this.setState({ filteredData: filteredData });
-    // console.log(searchTxt);
   }
 
   async getAllFiles() {

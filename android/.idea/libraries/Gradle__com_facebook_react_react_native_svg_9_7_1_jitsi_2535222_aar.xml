@@ -5,6 +5,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/99fe085bce33cc4454007c621874de21/jetified-react-native-svg-9.7.1-jitsi-2535222/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/99fe085bce33cc4454007c621874de21/jetified-react-native-svg-9.7.1-jitsi-2535222/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/99fe085bce33cc4454007c621874de21/jetified-react-native-svg-9.7.1-jitsi-2535222/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d575d965281d886baa8c0cd799da582e/react-native-svg-9.7.1-jitsi-2535222/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d575d965281d886baa8c0cd799da582e/react-native-svg-9.7.1-jitsi-2535222/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d575d965281d886baa8c0cd799da582e/react-native-svg-9.7.1-jitsi-2535222/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

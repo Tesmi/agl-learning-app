@@ -4,6 +4,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3d0c597c5e7c24202668ebd41b48056/jetified-react-native-webview-7.4.1-jitsi-2535222/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3d0c597c5e7c24202668ebd41b48056/jetified-react-native-webview-7.4.1-jitsi-2535222/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3d0c597c5e7c24202668ebd41b48056/jetified-react-native-webview-7.4.1-jitsi-2535222/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9da62ca0bf128738f021fdf94e52de5f/react-native-webview-7.4.1-jitsi-2535222/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9da62ca0bf128738f021fdf94e52de5f/react-native-webview-7.4.1-jitsi-2535222/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9da62ca0bf128738f021fdf94e52de5f/react-native-webview-7.4.1-jitsi-2535222/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

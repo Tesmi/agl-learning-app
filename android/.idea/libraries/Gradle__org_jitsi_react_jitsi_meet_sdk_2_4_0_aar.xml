@@ -4,6 +4,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/066d385e411eec565a6a73ba493ec548/jetified-jitsi-meet-sdk-2.4.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/066d385e411eec565a6a73ba493ec548/jetified-jitsi-meet-sdk-2.4.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/066d385e411eec565a6a73ba493ec548/jetified-jitsi-meet-sdk-2.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad5362ea2545c69a8b78085ca43d1ab1/jitsi-meet-sdk-2.4.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad5362ea2545c69a8b78085ca43d1ab1/jitsi-meet-sdk-2.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad5362ea2545c69a8b78085ca43d1ab1/jitsi-meet-sdk-2.4.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

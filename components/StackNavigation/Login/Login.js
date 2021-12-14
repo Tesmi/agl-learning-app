@@ -11,6 +11,8 @@ import {
   ToastAndroid,
 } from "react-native";
 
+import messaging from "@react-native-firebase/messaging";
+
 import axios from "axios";
 import config from "../../../config";
 
@@ -36,7 +38,7 @@ export default function Login(props) {
     <TextInput.Icon name="lock-outline" size={25} color="#fff" />
   );
 
-  function startLogin() {
+  async function startLogin() {
     setloginStart(true);
 
     if (!username || !password) {
@@ -55,11 +57,14 @@ export default function Login(props) {
       );
     }
 
+    const fcmToken = await messaging().getToken();
+
     axios
       .get(`${config.uri}/public/login`, {
         params: {
           user: username,
           password: password,
+          fcm: fcmToken || "",
         },
       })
       .then((e) => {
