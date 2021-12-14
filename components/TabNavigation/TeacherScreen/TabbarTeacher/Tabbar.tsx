@@ -22,7 +22,7 @@ const tabs = [
   { icon: [<Files />, "FilesScreen"]},
   { icon: [<Schedule />,"ScheduleScreen"] },
   { icon: [<Bell />,"NotificationScreen"] },
-  { icon: [<Box />,"RecycleScreen"] },
+  { icon: [<Box />,"RecordedVideoScreen"] },
 ];
 const styles = StyleSheet.create({
   container: {

@@ -8,6 +8,7 @@ import {
   ToastAndroid,
   StatusBar,
   Dimensions,
+  BackHandler,
 } from "react-native";
 import { Appbar, TextInput, List, Button } from "react-native-paper";
 
@@ -38,7 +39,20 @@ export default class RecycleScreen extends Component {
 
   componentDidMount() {
     this.getData();
+    this.props.hideBottomTab();
+    this.backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      this.backAction
+    );
   }
+
+  componentWillUnmount() {
+    this.backHandler.remove();
+  }
+
+  backAction = () => {
+    this.props.showBottomTab();
+  };
 
   setClass(txt, grade) {
     this.setState({
@@ -250,6 +264,13 @@ export default class RecycleScreen extends Component {
               onPress={() => this.props.navigation.openDrawer()}
             />
             <Appbar.Content title="Recycle" />
+            <Appbar.Action
+              icon="close"
+              onPress={() => {
+                this.props.showBottomTab();
+                this.props.navigation.navigate("root");
+              }}
+            />
           </Appbar.Header>
         </View>
         <View
@@ -283,6 +304,13 @@ export default class RecycleScreen extends Component {
               onPress={() => this.props.navigation.openDrawer()}
             />
             <Appbar.Content title="Recycle" />
+            <Appbar.Action
+              icon="close"
+              onPress={() => {
+                this.props.showBottomTab();
+                this.props.navigation.navigate("root");
+              }}
+            />
           </Appbar.Header>
         </View>
 

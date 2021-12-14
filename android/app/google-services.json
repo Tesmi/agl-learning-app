@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608362659825",
+    "project_id": "agl-learning-app-7a675",
+    "storage_bucket": "agl-learning-app-7a675.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608362659825:android:630db4bef999d3be320e50",
+        "android_client_info": {
+          "package_name": "com.agl_learning_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608362659825-9eb7pullp9bq6pdg25tqot45q4q481c3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7em2FI9z-Q0tmnQ5PFeNLA40vzWqhEoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608362659825-9eb7pullp9bq6pdg25tqot45q4q481c3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

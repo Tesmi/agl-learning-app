@@ -1,8 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text } from "react-native";
-
-import TabBar from "./StudentScreen/TabbarStudent/index";
+import { View } from "react-native";
 
 //Importing Screens
 
@@ -10,8 +8,7 @@ import HomeScreen from "./HomeScreen/HomeScreen";
 import FilesScreen from "./StudentScreen/FilesScreen/FilesScreen";
 import ScheduleScreen from "./StudentScreen/ScheduleScreen/ScheduleScreen";
 import NotificationsScreen from "./StudentScreen/NotificationsScreen/NotificationsScreen";
-import SettingsScreen from "./SettingsScreen/SettingsScreen";
-import RecycleScreen from "./StudentScreen/RecycleScreen/RecycleScreen";
+import RecVidScreen from "./StudentScreen/RecordedVidScreen/RecVidScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -83,14 +80,19 @@ export default class StudentRootNav extends React.Component {
             )}
           </Tab.Screen>
           <Tab.Screen
-            name="RecycleScreen"
+            name="RecordedVideoScreen"
             options={{ tabBarVisible: false, unmountOnBlur: true }}
             listeners={({ navigation }) => ({
               blur: () => navigation.setParams({ screen: undefined }),
             })}
           >
             {({ navigation }) => (
-              <RecycleScreen navigation={navigation} token={this.props.token} />
+              <RecVidScreen
+                hideBottomTab={this.props.hideBottomTab}
+                showBottomTab={this.props.showBottomTab}
+                navigation={navigation}
+                token={this.props.token}
+              />
             )}
           </Tab.Screen>
         </Tab.Navigator>

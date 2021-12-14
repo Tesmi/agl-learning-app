@@ -6,7 +6,6 @@ import { View, ToastAndroid } from "react-native";
 import { navigationRef } from "./components/TabNavigation/TabNavRef";
 
 //Importing components
-
 import StudentRootNav from "./components/TabNavigation/StudentRootNav";
 import TeacherRootNav from "./components/TabNavigation/TeacherRootNav";
 import MainStackNav from "./components/StackNavigation/MainStackNav";
@@ -16,6 +15,8 @@ import StudentTabBar from "./components/TabNavigation/StudentScreen/TabbarStuden
 import SettingsScreen from "./components/TabNavigation/SettingsScreen/SettingsScreen";
 import SupportScreen from "./components/TabNavigation/SupportScreen/SupportScreen";
 import DrawerContent from "./components/TabNavigation/Drawer/DrawerContent";
+import RecycleScreenStudent from "./components/TabNavigation/StudentScreen/RecycleScreen/RecycleScreen";
+import RecycleScreenTeacher from "./components/TabNavigation/TeacherScreen/RecycleScreen/RecycleScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -106,6 +107,12 @@ export default class App extends React.Component {
                 children={() =>
                   this.state.accountType == "teacher" ? (
                     <TeacherRootNav
+                      hideBottomTab={() =>
+                        this.setState({ isBottomTabVisible: false })
+                      }
+                      showBottomTab={() =>
+                        this.setState({ isBottomTabVisible: true })
+                      }
                       removeAccessToken={() => this.setState({ token: null })}
                       token={this.state.token}
                       changeURL={(url) => this.changeUrl(url)}
@@ -116,6 +123,12 @@ export default class App extends React.Component {
                     />
                   ) : (
                     <StudentRootNav
+                      hideBottomTab={() =>
+                        this.setState({ isBottomTabVisible: false })
+                      }
+                      showBottomTab={() =>
+                        this.setState({ isBottomTabVisible: true })
+                      }
                       removeAccessToken={() => this.setState({ token: null })}
                       changeURL={(url) => this.changeUrl(url)}
                       token={this.state.token}
@@ -127,6 +140,43 @@ export default class App extends React.Component {
                   )
                 }
               />
+
+              {this.state.accountType == "teacher" ? (
+                <Drawer.Screen
+                  name="recycleScreen"
+                  children={({ navigation }) => (
+                    <RecycleScreenTeacher
+                      navigation={navigation}
+                      hideBottomTab={() =>
+                        this.setState({ isBottomTabVisible: false })
+                      }
+                      showBottomTab={() =>
+                        this.setState({ isBottomTabVisible: true })
+                      }
+                      removeAccessToken={() => this.setState({ token: null })}
+                      token={this.state.token}
+                    />
+                  )}
+                />
+              ) : (
+                <Drawer.Screen
+                  name="recycleScreen"
+                  children={({ navigation }) => (
+                    <RecycleScreenStudent
+                      navigation={navigation}
+                      hideBottomTab={() =>
+                        this.setState({ isBottomTabVisible: false })
+                      }
+                      showBottomTab={() =>
+                        this.setState({ isBottomTabVisible: true })
+                      }
+                      removeAccessToken={() => this.setState({ token: null })}
+                      token={this.state.token}
+                    />
+                  )}
+                />
+              )}
+
               <Drawer.Screen
                 name="settingsScreen"
                 children={({ navigation }) => (

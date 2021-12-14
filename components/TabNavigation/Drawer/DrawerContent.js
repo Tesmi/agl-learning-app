@@ -125,6 +125,15 @@ export default class DrawerContent extends Component {
             <Drawer.Section style={styles.drawerSection}>
               <DrawerItem
                 icon={({ color, size }) => (
+                  <Icon name="file-cabinet" color={color} size={size} />
+                )}
+                label="Recycled Content"
+                onPress={() => {
+                  this.props.navigation.navigate("recycleScreen");
+                }}
+              />
+              <DrawerItem
+                icon={({ color, size }) => (
                   <Icon name="account-cog-outline" color={color} size={size} />
                 )}
                 label="Settings"
