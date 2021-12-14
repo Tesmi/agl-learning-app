@@ -8,7 +8,7 @@ PushNotification.configure({
   // (required) Called when a remote or local notification is opened or received
   onNotification: function (notification) {
     Alert.alert(
-      "Notification from " + notification.title,
+      "New Notification: " + notification.title,
       notification.message,
       [{}, { text: "OK", onPress: () => null }]
     );

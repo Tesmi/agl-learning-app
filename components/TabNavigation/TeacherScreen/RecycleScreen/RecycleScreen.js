@@ -228,6 +228,7 @@ export default class RecycleScreen extends Component {
       { "Tenth Standard": 10 },
       { "Eleventh Standard": 11 },
       { "Twelfth Standard": 12 },
+      { "Competitive Exams": "Competitive Exams" },
     ];
 
     const board = [
@@ -248,6 +249,22 @@ export default class RecycleScreen extends Component {
       "Delhi Board",
       "J & K Board",
       "Andhra Pradesh Board",
+    ];
+
+    const comp = [
+      "Everyone",
+      "UPSC",
+      "SSC",
+      "Railway",
+      "PCS",
+      "State Police",
+      "IIT JAM",
+      "IIT JEE",
+      "ARMY",
+      "BANK",
+      "SSC GD",
+      "NTPC",
+      "Others",
     ];
 
     return this.state.loading ? (
@@ -321,25 +338,7 @@ export default class RecycleScreen extends Component {
           <View style={{ alignItems: "center" }}>
             <View style={styles.mainContainer}>
               <Text style={styles.heading}>Post Content</Text>
-              <List.Section title="Select Board">
-                <List.Accordion
-                  title={this.state.board}
-                  left={(props) => <List.Icon {...props} icon="apps-box" />}
-                  expanded={this.state.boardExpanded}
-                  onPress={() =>
-                    this.setState({ boardExpanded: !this.state.boardExpanded })
-                  }
-                >
-                  {board.map((board, key) => (
-                    <List.Item
-                      onPress={() => this.setBoard(board)}
-                      title={board}
-                      key={key}
-                    />
-                  ))}
-                </List.Accordion>
-              </List.Section>
-              <List.Section title="Select Class">
+              <List.Section title="Select Education">
                 <List.Accordion
                   title={this.state.class}
                   left={(props) => <List.Icon {...props} icon="school" />}
@@ -360,6 +359,41 @@ export default class RecycleScreen extends Component {
                       key={key}
                     />
                   ))}
+                </List.Accordion>
+              </List.Section>
+
+              <List.Section
+                title={
+                  this.state.classData == "Competitive Exams"
+                    ? "Field"
+                    : "Board"
+                }
+              >
+                <List.Accordion
+                  title={this.state.board}
+                  left={(props) => <List.Icon {...props} icon="apps-box" />}
+                  expanded={this.state.boardExpanded}
+                  onPress={() =>
+                    this.setState({ boardExpanded: !this.state.boardExpanded })
+                  }
+                >
+                  {this.state.classData == "Competitive Exams" &&
+                    comp.map((board, key) => (
+                      <List.Item
+                        onPress={() => this.setBoard(board)}
+                        title={board}
+                        key={key}
+                      />
+                    ))}
+
+                  {this.state.classData != "Competitive Exams" &&
+                    board.map((board, key) => (
+                      <List.Item
+                        onPress={() => this.setBoard(board)}
+                        title={board}
+                        key={key}
+                      />
+                    ))}
                 </List.Accordion>
               </List.Section>
 

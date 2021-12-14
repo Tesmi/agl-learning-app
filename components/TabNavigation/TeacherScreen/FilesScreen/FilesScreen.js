@@ -410,6 +410,7 @@ export default class FilesScreen extends Component {
       { "Tenth Standard": 10 },
       { "Eleventh Standard": 11 },
       { "Twelfth Standard": 12 },
+      { "Competitive Exams": "Competitive Exams" },
     ];
 
     const board = [
@@ -430,6 +431,22 @@ export default class FilesScreen extends Component {
       "Delhi Board",
       "J & K Board",
       "Andhra Pradesh Board",
+    ];
+
+    const comp = [
+      "Everyone",
+      "UPSC",
+      "SSC",
+      "Railway",
+      "PCS",
+      "State Police",
+      "IIT JAM",
+      "IIT JEE",
+      "ARMY",
+      "BANK",
+      "SSC GD",
+      "NTPC",
+      "Others",
     ];
 
     return this.state.loading ? (
@@ -494,26 +511,7 @@ export default class FilesScreen extends Component {
                 onChangeText={(text) => this.setState({ filename: text })}
               />
 
-              <List.Section title="Select Board of Student">
-                <List.Accordion
-                  title={this.state.board}
-                  left={(props) => <List.Icon {...props} icon="apps-box" />}
-                  expanded={this.state.boardExpanded}
-                  onPress={() =>
-                    this.setState({ boardExpanded: !this.state.boardExpanded })
-                  }
-                >
-                  {board.map((board, key) => (
-                    <List.Item
-                      onPress={() => this.setBoard(board)}
-                      title={board}
-                      key={key}
-                    />
-                  ))}
-                </List.Accordion>
-              </List.Section>
-
-              <List.Section title="Select Class of Student">
+              <List.Section title="Select Education of Student">
                 <List.Accordion
                   title={this.state.class}
                   left={(props) => <List.Icon {...props} icon="school" />}
@@ -536,6 +534,41 @@ export default class FilesScreen extends Component {
                   ))}
                 </List.Accordion>
               </List.Section>
+
+              <List.Section
+                title={
+                  this.state.classData == "Competitive Exams"
+                    ? "Select Field of Student"
+                    : "Select Board of Student"
+                }
+              >
+                <List.Accordion
+                  title={this.state.board}
+                  left={(props) => <List.Icon {...props} icon="apps-box" />}
+                  expanded={this.state.boardExpanded}
+                  onPress={() =>
+                    this.setState({ boardExpanded: !this.state.boardExpanded })
+                  }
+                >
+                  {this.state.classData == "Competitive Exams" &&
+                    comp.map((board, key) => (
+                      <List.Item
+                        onPress={() => this.setBoard(board)}
+                        title={board}
+                        key={key}
+                      />
+                    ))}
+                  {this.state.classData != "Competitive Exams" &&
+                    board.map((board, key) => (
+                      <List.Item
+                        onPress={() => this.setBoard(board)}
+                        title={board}
+                        key={key}
+                      />
+                    ))}
+                </List.Accordion>
+              </List.Section>
+
               <TextInput
                 placeholder="Description of file"
                 mode="outlined"
@@ -635,7 +668,7 @@ export default class FilesScreen extends Component {
                             >
                               {obj.ClassName == "Everyone"
                                 ? "All Classes"
-                                : "Class " + obj.ClassName}
+                                : "Class: " + obj.ClassName}
                             </Subheading>
                           </View>
 

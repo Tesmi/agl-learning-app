@@ -258,6 +258,18 @@ export default class ScheduleScreen extends Component {
   }
 
   render() {
+    const standard = [
+      { Everyone: "Everyone" },
+      { "Sixth Standard": 6 },
+      { "Seventh Standard": 7 },
+      { "Eighth Standard": 8 },
+      { "Ninth Standard": 9 },
+      { "Tenth Standard": 10 },
+      { "Eleventh Standard": 11 },
+      { "Twelfth Standard": 12 },
+      { "Competitive Exams": "Competitive Exams" },
+    ];
+
     const board = [
       "Everyone",
       "C.B.S.E Board",
@@ -278,15 +290,20 @@ export default class ScheduleScreen extends Component {
       "Andhra Pradesh Board",
     ];
 
-    const standard = [
-      { Everyone: "Everyone" },
-      { "Sixth Standard": 6 },
-      { "Seventh Standard": 7 },
-      { "Eighth Standard": 8 },
-      { "Ninth Standard": 9 },
-      { "Tenth Standard": 10 },
-      { "Eleventh Standard": 11 },
-      { "Twelfth Standard": 12 },
+    const comp = [
+      "Everyone",
+      "UPSC",
+      "SSC",
+      "Railway",
+      "PCS",
+      "State Police",
+      "IIT JAM",
+      "IIT JEE",
+      "ARMY",
+      "BANK",
+      "SSC GD",
+      "NTPC",
+      "Others",
     ];
 
     return this.state.loading ? (
@@ -352,7 +369,7 @@ export default class ScheduleScreen extends Component {
                 onChangeText={(text) => this.setState({ lectureName: text })}
               />
 
-              <List.Section title="This class is for -">
+              <List.Section title="This lecture is for -">
                 <List.Accordion
                   title={this.state.class}
                   left={(props) => <List.Icon {...props} icon="school" />}
@@ -384,13 +401,23 @@ export default class ScheduleScreen extends Component {
                     this.setState({ boardExpanded: !this.state.boardExpanded })
                   }
                 >
-                  {board.map((board, key) => (
-                    <List.Item
-                      onPress={() => this.setBoard(board)}
-                      title={board}
-                      key={key}
-                    />
-                  ))}
+                  {this.state.classData == "Competitive Exams" &&
+                    comp.map((board, key) => (
+                      <List.Item
+                        onPress={() => this.setBoard(board)}
+                        title={board}
+                        key={key}
+                      />
+                    ))}
+
+                  {this.state.classData != "Competitive Exams" &&
+                    board.map((board, key) => (
+                      <List.Item
+                        onPress={() => this.setBoard(board)}
+                        title={board}
+                        key={key}
+                      />
+                    ))}
                 </List.Accordion>
               </List.Section>
 
@@ -509,7 +536,7 @@ export default class ScheduleScreen extends Component {
                             >
                               {obj.ClassData == "Everyone"
                                 ? "All Classes"
-                                : "Class " + obj.ClassData}
+                                : "Class: " + obj.ClassData}
                             </Subheading>
                           </View>
 

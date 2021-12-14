@@ -386,6 +386,7 @@ export default class SettingsScreen extends Component {
       { "Tenth Standard": 10 },
       { "Eleventh Standard": 11 },
       { "Twelfth Standard": 12 },
+      { "Competitive Exams": "Competitive Exams" },
     ];
 
     const board = [
@@ -405,6 +406,21 @@ export default class SettingsScreen extends Component {
       "Delhi Board",
       "J & K Board",
       "Andhra Pradesh Board",
+    ];
+
+    const comp = [
+      "UPSC",
+      "SSC",
+      "Railway",
+      "PCS",
+      "State Police",
+      "IIT JAM",
+      "IIT JEE",
+      "ARMY",
+      "BANK",
+      "SSC GD",
+      "NTPC",
+      "Others",
     ];
 
     return this.state.loading ? (
@@ -529,7 +545,7 @@ export default class SettingsScreen extends Component {
 
               {this.state.accountType == "student" ? (
                 <View>
-                  <List.Section title="Class">
+                  <List.Section title="Select Education">
                     <List.Accordion
                       title={this.state.grade}
                       left={(props) => <List.Icon {...props} icon="school" />}
@@ -555,7 +571,13 @@ export default class SettingsScreen extends Component {
                     </List.Accordion>
                   </List.Section>
 
-                  <List.Section title="Board">
+                  <List.Section
+                    title={
+                      this.state.grade == "Competitive Exams"
+                        ? "Field"
+                        : "Board"
+                    }
+                  >
                     <List.Accordion
                       title={this.state.board}
                       left={(props) => <List.Icon {...props} icon="apps-box" />}
@@ -566,13 +588,23 @@ export default class SettingsScreen extends Component {
                         })
                       }
                     >
-                      {board.map((board, key) => (
-                        <List.Item
-                          onPress={() => this.setBoard(board)}
-                          title={board}
-                          key={key}
-                        />
-                      ))}
+                      {this.state.grade == "Competitive Exams" &&
+                        comp.map((board, key) => (
+                          <List.Item
+                            onPress={() => this.setBoard(board)}
+                            title={board}
+                            key={key}
+                          />
+                        ))}
+
+                      {this.state.grade != "Competitive Exams" &&
+                        board.map((board, key) => (
+                          <List.Item
+                            onPress={() => this.setBoard(board)}
+                            title={board}
+                            key={key}
+                          />
+                        ))}
                     </List.Accordion>
                   </List.Section>
                 </View>

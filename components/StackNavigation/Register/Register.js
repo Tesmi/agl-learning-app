@@ -176,6 +176,7 @@ function selectGradeComponent() {
     { "Tenth Standard": 10 },
     { "Eleventh Standard": 11 },
     { "Twelfth Standard": 12 },
+    { "Competitive Exams": "Competitive Exams" },
   ];
 
   const board = [
@@ -195,6 +196,21 @@ function selectGradeComponent() {
     "Delhi Board",
     "J & K Board",
     "Andhra Pradesh Board",
+  ];
+
+  const comp = [
+    "UPSC",
+    "SSC",
+    "Railway",
+    "PCS",
+    "State Police",
+    "IIT JAM",
+    "IIT JEE",
+    "ARMY",
+    "BANK",
+    "SSC GD",
+    "NTPC",
+    "Others",
   ];
 
   return (
@@ -225,25 +241,47 @@ function selectGradeComponent() {
                     paddingBottom: 10,
                   }}
                 >
-                  {board.map((board, key) => (
-                    <TouchableHighlight
-                      key={key}
-                      activeOpacity={1}
-                      underlayColor="#464555"
-                      onPress={() => {
-                        this.setState({ board });
-                      }}
-                      style={{
-                        ...styles.listItem,
-                        backgroundColor:
-                          this.state.board == board ? "#464555" : "#93979e",
-                      }}
-                    >
-                      <View>
-                        <Text style={styles.listTxt}>{board}</Text>
-                      </View>
-                    </TouchableHighlight>
-                  ))}
+                  {this.state.grade == "Competitive Exams" &&
+                    comp.map((board, key) => (
+                      <TouchableHighlight
+                        key={key}
+                        activeOpacity={1}
+                        underlayColor="#464555"
+                        onPress={() => {
+                          this.setState({ board });
+                        }}
+                        style={{
+                          ...styles.listItem,
+                          backgroundColor:
+                            this.state.board == board ? "#464555" : "#93979e",
+                        }}
+                      >
+                        <View>
+                          <Text style={styles.listTxt}>{board}</Text>
+                        </View>
+                      </TouchableHighlight>
+                    ))}
+
+                  {this.state.grade != "Competitive Exams" &&
+                    board.map((board, key) => (
+                      <TouchableHighlight
+                        key={key}
+                        activeOpacity={1}
+                        underlayColor="#464555"
+                        onPress={() => {
+                          this.setState({ board });
+                        }}
+                        style={{
+                          ...styles.listItem,
+                          backgroundColor:
+                            this.state.board == board ? "#464555" : "#93979e",
+                        }}
+                      >
+                        <View>
+                          <Text style={styles.listTxt}>{board}</Text>
+                        </View>
+                      </TouchableHighlight>
+                    ))}
                 </ScrollView>
               ) : (
                 <ScrollView
@@ -259,7 +297,9 @@ function selectGradeComponent() {
                       activeOpacity={1}
                       underlayColor="#464555"
                       onPress={() => {
-                        this.setState({ grade: grade[Object.keys(grade)[0]] });
+                        this.setState({
+                          grade: grade[Object.keys(grade)[0]],
+                        });
                       }}
                       style={{
                         ...styles.listItem,
