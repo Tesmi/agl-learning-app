@@ -28,7 +28,6 @@ export default class App extends React.Component {
       token: null,
       accountType: null,
       startStream: false,
-      userinfo: { username: "user", email: "user@jitsi.aglofficial.com" },
       url: "https://jitsi.aglofficial.com/1iogsl6izbk",
     };
   }
@@ -84,7 +83,7 @@ export default class App extends React.Component {
     return this.state.startStream ? (
       <StreamScreen
         url={this.state.url}
-        info={this.state.userinfo}
+        token={this.state.token}
         stopStream={() => this.stopStream()}
       />
     ) : (

@@ -11,6 +11,8 @@ import {
   Image,
   TouchableOpacity,
   Linking,
+  Modal,
+  Dimensions,
 } from "react-native";
 import {
   Appbar,
@@ -26,6 +28,161 @@ import axios from "axios";
 import styles from "./styles";
 import config from "../../../config";
 
+function TeacherModal() {
+  const winWidth = Dimensions.get("window").width;
+  const winHeight = Dimensions.get("window").height;
+  return (
+    <Modal
+      animationType="fade"
+      transparent={true}
+      visible={this.state.showTeacherModal}
+      onRequestClose={() => closeModal()}
+    >
+      <View
+        style={{
+          backgroundColor: "#00000080",
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <SafeAreaView style={{ flex: 1 }}>
+          <View
+            style={{
+              backgroundColor: "white",
+              width: winWidth,
+              height: winHeight - StatusBar.currentHeight,
+            }}
+          >
+            <StatusBar
+              animated={true}
+              barStyle={"light-content"}
+              backgroundColor="#6200ee"
+            />
+            <View>
+              <Appbar.Header>
+                <Appbar.Content title="Teacher's Info" />
+                <Appbar.Action
+                  icon="close"
+                  onPress={() => {
+                    this.setState({ showTeacherModal: false });
+                  }}
+                />
+              </Appbar.Header>
+            </View>
+            <ScrollView
+              keyboardShouldPersistTaps="handled"
+              contentContainerStyle={{
+                alignItems: "center",
+                flexGrow: 1,
+                backgroundColor: "#f2f5f0",
+              }}
+            >
+              {this.state.teacherData ? (
+                this.state.teacherData.map((teacher, key) => (
+                  <View
+                    key={key}
+                    style={{
+                      backgroundColor: "white",
+                      marginTop: 10,
+                      width: "97%",
+                      borderRadius: 6,
+                      borderWidth: 2.2,
+                      borderColor: "#ed093f",
+                      padding: 10,
+                      marginBottom: 15,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: "#3c2a75",
+                        alignSelf: "flex-start",
+                        fontSize: 18,
+                        fontWeight: "bold",
+                        marginTop: 5,
+                        marginBottom: 10,
+                      }}
+                    >
+                      {teacher.Gender == "male" ? "Mr. " : "Ms. "}
+                      {teacher.FullName}
+                    </Text>
+
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        color: "#555457",
+                        fontSize: 16,
+                      }}
+                    >
+                      Username : {teacher.UserName || "Not Found"}
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        color: "#555457",
+                        fontSize: 16,
+                      }}
+                    >
+                      Age : {teacher.Age || "Not found"}
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        color: "#555457",
+                        fontSize: 16,
+                      }}
+                    >
+                      Experience : {teacher.Experience || "Not found"}
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        color: "#555457",
+                        fontSize: 16,
+                      }}
+                    >
+                      Gender : {teacher.Gender || "Not Mentioned"}
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        color: "#555457",
+                        fontSize: 16,
+                      }}
+                    >
+                      Qualifications : {teacher.Qualifications || "Not Found"}
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        color: "#555457",
+                        fontSize: 16,
+                      }}
+                    >
+                      Specializations : {teacher.Specializations || "Not Found"}
+                    </Text>
+                  </View>
+                ))
+              ) : (
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ fontSize: 24 }}>No teacher found</Text>
+                </View>
+              )}
+            </ScrollView>
+          </View>
+        </SafeAreaView>
+      </View>
+    </Modal>
+  );
+}
+
 export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
@@ -36,8 +193,12 @@ export default class HomeScreen extends Component {
       totalStudents: "0",
       totalTeachers: "0",
       moderators: "0",
+      teacherData: null,
       currentClasses: null,
+      showTeacherModal: false,
     };
+
+    TeacherModal = TeacherModal.bind(this);
   }
 
   componentDidMount() {
@@ -103,6 +264,7 @@ export default class HomeScreen extends Component {
             totalTeachers: data.totalTeachers,
             moderators: data.moderators,
             currentClasses: data.currentClasses,
+            teacherData: data.teacherData,
             loading: false,
           });
         } else {
@@ -162,7 +324,7 @@ export default class HomeScreen extends Component {
           barStyle={"light-content"}
           backgroundColor="#6200ee"
         />
-
+        {TeacherModal()}
         <View>
           <Appbar.Header>
             <Appbar.Action
@@ -315,10 +477,14 @@ export default class HomeScreen extends Component {
                   source={require("../../../assets/student.png")}
                   style={styles.images}
                 />
-                <Image
-                  source={require("../../../assets/teacher.png")}
-                  style={styles.images}
-                />
+                <TouchableOpacity
+                  onPress={() => this.setState({ showTeacherModal: true })}
+                >
+                  <Image
+                    source={require("../../../assets/teacher.png")}
+                    style={styles.images}
+                  />
+                </TouchableOpacity>
               </View>
               <View
                 style={{
