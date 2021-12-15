@@ -28,7 +28,6 @@
   <androidx.compose.compiler/>
   <androidx.compose.foundation/>
   <androidx.compose.material/>
-  <androidx.compose.material3/>
   <androidx.compose.runtime/>
   <androidx.compose.ui/>
   <androidx.concurrent/>
@@ -62,7 +61,6 @@
   <androidx.localbroadcastmanager/>
   <androidx.media/>
   <androidx.media2/>
-  <androidx.media3/>
   <androidx.mediarouter/>
   <androidx.multidex/>
   <androidx.navigation/>
@@ -164,12 +162,10 @@
   <com.google.android.flexbox/>
   <com.google.android.games/>
   <com.google.android.gms/>
-  <com.google.android.gms.strict-version-matcher-plugin/>
   <com.google.android.instantapps/>
   <com.google.android.instantapps.thirdpartycompat/>
   <com.google.android.libraries.car/>
   <com.google.android.libraries.enterprise.amapi/>
-  <com.google.android.libraries.healthdata/>
   <com.google.android.libraries.maps/>
   <com.google.android.libraries.mapsplatform.secrets-gradle-plugin/>
   <com.google.android.libraries.places/>
@@ -191,11 +187,7 @@
   <com.google.devtools.ksp/>
   <com.google.fhir/>
   <com.google.firebase/>
-  <com.google.firebase.appdistribution/>
-  <com.google.firebase.crashlytics/>
-  <com.google.firebase.firebase-perf/>
   <com.google.gms/>
-  <com.google.gms.google-services/>
   <com.google.jacquard/>
   <com.google.mediapipe/>
   <com.google.mlkit/>

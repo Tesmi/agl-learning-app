@@ -141,8 +141,8 @@ android {
         applicationId "com.agl_learning_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName "1.0.1_3"
+        versionCode 1
+        versionName "1.0"
     }
     splits {
         abi {
