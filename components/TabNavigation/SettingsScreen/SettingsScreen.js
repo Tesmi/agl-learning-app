@@ -28,6 +28,10 @@ export default class SettingsScreen extends Component {
       createdOn: "",
       gender: "",
       fullName: "",
+      age: "Not Found",
+      experience: "Not Found",
+      qualifications: "Not Found",
+      specializations: "Not Found",
       userCurrentPassword: "",
       userPassword: "",
       confirmUserPassword: "",
@@ -106,7 +110,23 @@ export default class SettingsScreen extends Component {
 
     try {
       if (accountType == "teacher") {
-        //do nothing
+        let age = this.state.age;
+        let experience = this.state.experience;
+        let qualifications = this.state.qualifications;
+        let specializations = this.state.specializations;
+
+        if (!age || !experience || !qualifications || !specializations) {
+          this.setState({ updatingAccount: false });
+          return ToastAndroid.show(
+            "Error : All fields are required",
+            ToastAndroid.SHORT
+          );
+        }
+
+        dataToBeUpdated.Age = age;
+        dataToBeUpdated.Experience = experience;
+        dataToBeUpdated.Qualifications = qualifications;
+        dataToBeUpdated.Specializations = specializations;
       } else if (accountType == "student") {
         dataToBeUpdated.board = board;
         dataToBeUpdated.grade = grade;
@@ -177,6 +197,18 @@ export default class SettingsScreen extends Component {
               loading: false,
             });
           } else {
+            let Age = data.Age;
+            let Experience = data.Experience;
+            let Qualifications = data.Qualifications;
+            let Specializations = data.Specializations;
+
+            if (Age) this.setState({ age: Age });
+            if (Experience) this.setState({ experience: Experience });
+            if (Qualifications)
+              this.setState({ qualifications: Qualifications });
+            if (Specializations)
+              this.setState({ specializations: Specializations });
+
             this.setState({
               fullName: data.FullName,
               username: data.UserName,
@@ -608,7 +640,40 @@ export default class SettingsScreen extends Component {
                     </List.Accordion>
                   </List.Section>
                 </View>
-              ) : null}
+              ) : (
+                <>
+                  <TextInput
+                    style={{ marginTop: 10 }}
+                    mode="outlined"
+                    label="Age (in years)"
+                    keyboardType="numeric"
+                    value={this.state.age}
+                    onChangeText={(e) => this.setState({ age: e })}
+                  />
+                  <TextInput
+                    style={{ marginTop: 10 }}
+                    mode="outlined"
+                    label="Experience (in years)"
+                    keyboardType="numeric"
+                    value={this.state.experience}
+                    onChangeText={(e) => this.setState({ experience: e })}
+                  />
+                  <TextInput
+                    style={{ marginTop: 10 }}
+                    mode="outlined"
+                    label="Qualifications (comma seperated)"
+                    value={this.state.qualifications}
+                    onChangeText={(e) => this.setState({ qualifications: e })}
+                  />
+                  <TextInput
+                    style={{ marginTop: 10 }}
+                    mode="outlined"
+                    label="Specializations (comma seperated)"
+                    value={this.state.specializations}
+                    onChangeText={(e) => this.setState({ specializations: e })}
+                  />
+                </>
+              )}
 
               <Button
                 icon="update"
