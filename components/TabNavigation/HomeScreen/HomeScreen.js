@@ -33,6 +33,12 @@ function TeacherModal() {
   const winHeight = Dimensions.get("window").height;
   return (
     <Modal
+      style={{
+        margin: 0,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      backdropColor={"white"}
       animationType="fade"
       transparent={true}
       visible={this.state.showTeacherModal}
@@ -52,7 +58,7 @@ function TeacherModal() {
             style={{
               backgroundColor: "white",
               width: winWidth,
-              height: winHeight - StatusBar.currentHeight,
+              height: winHeight + StatusBar.currentHeight,
             }}
           >
             <StatusBar
@@ -175,6 +181,7 @@ function TeacherModal() {
                   <Text style={{ fontSize: 24 }}>No teacher found</Text>
                 </View>
               )}
+              <View style={{ marginBottom: 80 }}></View>
             </ScrollView>
           </View>
         </SafeAreaView>
