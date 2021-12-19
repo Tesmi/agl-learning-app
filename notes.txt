@@ -1,24 +1,3 @@
-**************UPLOAD COURSE WINDOW*******************
+https://community.jitsi.org/t/screen-sharing-from-android-app-to-browser-on-self-hosted-instance-does-not-work/85734/14
 
-**> Initial landing screen for student would be a collection of cards which have subject name and number of files 
-**> After clicking on any of the cards student will be greated with all the pdf files for that course and also would be able to download all of them 
-**> It will be centralized for all the students, meaning all the data will be serving from one collection of mondodb, except for pdfs they will be hosted from s3 bucket.
-**> On the download screen of every course a student can also comment (will be a bit tricky so keep it simple).
-**> On the teacher's screen, uploading a course requires him to 
-	1. Write name of the subject
-	2. choose multiple pdf files 
-	3. select class 
-
-**> use 
-	const { exec } = require('child_process');
-	
-	exec('find . -type f | wc -l', (err, stdout, stderr) => {
-	if (err) {
-	console.error(`exec error: ${err}`);
-	return;
-	}
-	
-	console.log(`Number of files ${stdout}`);
-	});	
-to spawn prosodyctl register user function 
-	
+android and browser can't share video, look at the soln in the above post
