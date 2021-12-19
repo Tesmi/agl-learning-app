@@ -9,7 +9,6 @@ import Weave from "./Weave";
 import * as Navigation from '../../TabNavRef'
 
 import Bell from "./icons/Bell";
-import LiveClasses from './icons/LiveClasses'
 import Dashboard from './icons/Dashboard'
 import Box from './icons/Box'
 import Schedule from './icons/Schedule'

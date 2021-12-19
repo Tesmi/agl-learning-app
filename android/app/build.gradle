@@ -209,7 +209,7 @@ dependencies {
 
 
     implementation(project(':react-native-jitsi-meet')) {
-    //   exclude group: 'com.facebook.react',module:'react-native-locale-detector'
+      //exclude group: 'com.facebook.react',module:'react-native-locale-detector'
       exclude group: 'com.facebook.react',module:'react-native-vector-icons'
       // Un-comment below if using hermes
       // exclude group: 'com.facebook',module:'hermes'
@@ -220,11 +220,19 @@ dependencies {
       exclude group: 'com.facebook.react',module:'react-native-svg'
       exclude group: 'com.facebook.react',module:'react-native-fetch-blob'
       exclude group: 'com.facebook.react',module:'react-native-webview'
+      exclude group: 'com.facebook.react',module:'react-native-video'
       //exclude group: 'com.facebook.react',module:'react-native-linear-gradient'
       //exclude group: 'com.facebook.react',module:'react-native-sound'
     }
 
-    implementation ('org.jitsi.react:jitsi-meet-sdk:3.+') { transitive = true }
+    implementation('org.jitsi.react:jitsi-meet-sdk:3.+') { 
+        transitive = true 
+        exclude module: 'react-native-video'
+        exclude group: 'com.facebook.react',module:'react-native-svg'
+        exclude group: 'com.facebook.react',module:'react-native-community-async-storage'
+        exclude group: 'com.facebook.react',module:'react-native-async-storage'
+        exclude group: 'com.facebook.react',module:'react-native-webview'
+    }
 
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
