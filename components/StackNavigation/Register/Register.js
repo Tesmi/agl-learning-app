@@ -199,6 +199,7 @@ function selectGradeComponent() {
   ];
 
   const comp = [
+    "DU Entrance",
     "UPSC",
     "SSC",
     "Railway",

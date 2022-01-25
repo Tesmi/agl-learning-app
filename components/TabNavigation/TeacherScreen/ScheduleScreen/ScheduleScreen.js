@@ -292,6 +292,7 @@ export default class ScheduleScreen extends Component {
 
     const comp = [
       "Everyone",
+      "DU Entrance",
       "UPSC",
       "SSC",
       "Railway",

@@ -253,6 +253,7 @@ export default class RecycleScreen extends Component {
 
     const comp = [
       "Everyone",
+      "DU Entrance",
       "UPSC",
       "SSC",
       "Railway",

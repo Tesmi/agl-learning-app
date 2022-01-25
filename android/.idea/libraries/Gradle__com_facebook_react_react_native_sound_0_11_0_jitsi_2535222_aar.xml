@@ -8,6 +8,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75e34e764654a76e54731ff9ef08c71e/react-native-sound-0.11.0-jitsi-2535222/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75e34e764654a76e54731ff9ef08c71e/react-native-sound-0.11.0-jitsi-2535222/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75e34e764654a76e54731ff9ef08c71e/react-native-sound-0.11.0-jitsi-2535222/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a9739813fb7274ad68019fe722c5841e/jetified-react-native-sound-0.11.0-jitsi-2535222/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a9739813fb7274ad68019fe722c5841e/jetified-react-native-sound-0.11.0-jitsi-2535222/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a9739813fb7274ad68019fe722c5841e/jetified-react-native-sound-0.11.0-jitsi-2535222/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -82,6 +82,36 @@ const styles = StyleSheet.create({
     width: 55,
     height: 55,
   },
+  teacherContainer: {
+    backgroundColor: "#00000080",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  teacherBlock: {
+    backgroundColor: "white",
+    marginTop: 10,
+    width: "97%",
+    borderRadius: 6,
+    borderWidth: 2.2,
+    borderColor: "#ed093f",
+    padding: 10,
+    marginBottom: 15,
+  },
+  teacherFullName: {
+    color: "#3c2a75",
+    alignSelf: "flex-start",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 5,
+    marginBottom: 10,
+  },
+  teacherContentTxt: {
+    fontWeight: "bold",
+    color: "#555457",
+    fontSize: 16,
+  },
 });
 
 export default styles;

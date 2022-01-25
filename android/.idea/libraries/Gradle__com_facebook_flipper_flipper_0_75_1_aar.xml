@@ -3,6 +3,7 @@
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7868851a0ac1f4140e4416d11c8ab058/jetified-flipper-0.75.1/annotations.zip!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/816f74afe74b330413dd0a28708179e7/flipper-0.75.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e073b22b7de78b6834b266612e112c78/jetified-flipper-0.75.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7868851a0ac1f4140e4416d11c8ab058/jetified-flipper-0.75.1/AndroidManifest.xml" />
@@ -11,6 +12,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/816f74afe74b330413dd0a28708179e7/flipper-0.75.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/816f74afe74b330413dd0a28708179e7/flipper-0.75.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/816f74afe74b330413dd0a28708179e7/flipper-0.75.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e073b22b7de78b6834b266612e112c78/jetified-flipper-0.75.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e073b22b7de78b6834b266612e112c78/jetified-flipper-0.75.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e073b22b7de78b6834b266612e112c78/jetified-flipper-0.75.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.flipper/flipper/0.75.1/e51a170d59d2f2747dcb13ea6edb2c9dfe7c3c5/flipper-0.75.1-javadoc.jar!/" />

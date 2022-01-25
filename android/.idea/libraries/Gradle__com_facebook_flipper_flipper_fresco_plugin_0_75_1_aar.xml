@@ -8,6 +8,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7eb2fb73c0001168fa3b05b660406a29/flipper-fresco-plugin-0.75.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7eb2fb73c0001168fa3b05b660406a29/flipper-fresco-plugin-0.75.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7eb2fb73c0001168fa3b05b660406a29/flipper-fresco-plugin-0.75.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c054402eaa13dc785e93397f24249bb/jetified-flipper-fresco-plugin-0.75.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c054402eaa13dc785e93397f24249bb/jetified-flipper-fresco-plugin-0.75.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c054402eaa13dc785e93397f24249bb/jetified-flipper-fresco-plugin-0.75.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.flipper/flipper-fresco-plugin/0.75.1/1ecb3279d9b4afc03a723d8f9e5c821718a82eb0/flipper-fresco-plugin-0.75.1-javadoc.jar!/" />

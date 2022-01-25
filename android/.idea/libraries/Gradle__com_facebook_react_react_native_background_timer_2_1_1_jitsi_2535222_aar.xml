@@ -8,6 +8,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/085ed26944a410360b8370547c80fea9/react-native-background-timer-2.1.1-jitsi-2535222/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/085ed26944a410360b8370547c80fea9/react-native-background-timer-2.1.1-jitsi-2535222/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/085ed26944a410360b8370547c80fea9/react-native-background-timer-2.1.1-jitsi-2535222/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7d9f84647fa840f3d6c8fc5e2722002/jetified-react-native-background-timer-2.1.1-jitsi-2535222/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7d9f84647fa840f3d6c8fc5e2722002/jetified-react-native-background-timer-2.1.1-jitsi-2535222/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7d9f84647fa840f3d6c8fc5e2722002/jetified-react-native-background-timer-2.1.1-jitsi-2535222/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

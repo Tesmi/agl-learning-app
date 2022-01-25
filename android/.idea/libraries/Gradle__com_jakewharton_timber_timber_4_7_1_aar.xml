@@ -8,6 +8,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/07074489e4be0bca8067be6a721a1023/jetified-timber-4.7.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/07074489e4be0bca8067be6a721a1023/jetified-timber-4.7.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/07074489e4be0bca8067be6a721a1023/jetified-timber-4.7.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2465181c7c74e7a2fb9972869dac1214/jetified-timber-4.7.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2465181c7c74e7a2fb9972869dac1214/jetified-timber-4.7.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2465181c7c74e7a2fb9972869dac1214/jetified-timber-4.7.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.timber/timber/4.7.1/746f28c804e92fe2b0dd553616c78b1c3693ba16/timber-4.7.1-javadoc.jar!/" />

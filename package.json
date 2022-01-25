@@ -25,6 +25,7 @@
     "react-native-date-picker": "3.3.2",
     "react-native-document-picker": "6.0.2",
     "react-native-gesture-handler": "1.10.3",
+    "react-native-image-crop-picker": "^0.37.2",
     "react-native-jitsi-meet": "2.1.1",
     "react-native-otp-textinput": "0.0.8",
     "react-native-paper": "4.9.1",
@@ -37,7 +38,6 @@
     "react-native-swipe-gestures": "1.0.5",
     "react-native-vector-icons": "8.1.0",
     "react-native-video": "^5.2.0",
-    "react-native-video-player": "^0.12.0",
     "react-native-webview": "^11.13.0",
     "react-native-youtube-iframe": "^2.1.2",
     "rn-fetch-blob": "0.12.0"

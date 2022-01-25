@@ -36,6 +36,7 @@ export default class HomeScreen extends Component {
       loading: true,
       fullName: "",
       totalStudents: "0",
+      // profilePic: "default.jpg",
       totalTeachers: "0",
       moderators: "0",
       teacherData: null,
@@ -105,15 +106,7 @@ export default class HomeScreen extends Component {
         visible={this.state.showTeacherModal}
         onRequestClose={() => this.setState({ showTeacherModal: false })}
       >
-        <View
-          style={{
-            backgroundColor: "#00000080",
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <View style={styles.teacherContainer}>
           <SafeAreaView style={{ flex: 1 }}>
             <View
               style={{
@@ -148,85 +141,39 @@ export default class HomeScreen extends Component {
               >
                 {this.state.teacherData ? (
                   this.state.teacherData.map((teacher, key) => (
-                    <View
-                      key={key}
-                      style={{
-                        backgroundColor: "white",
-                        marginTop: 10,
-                        width: "97%",
-                        borderRadius: 6,
-                        borderWidth: 2.2,
-                        borderColor: "#ed093f",
-                        padding: 10,
-                        marginBottom: 15,
-                      }}
-                    >
-                      <Text
+                    <View key={key} style={styles.teacherBlock}>
+                      <Image
                         style={{
-                          color: "#3c2a75",
-                          alignSelf: "flex-start",
-                          fontSize: 18,
-                          fontWeight: "bold",
-                          marginTop: 5,
-                          marginBottom: 10,
+                          width: "100%",
+                          height: 280,
+                          resizeMode: "cover",
                         }}
-                      >
+                        source={{
+                          uri: teacher.profilePic
+                            ? `${config.uri}/${teacher.profilePic}`
+                            : `${config.uri}/default.jpg`,
+                        }}
+                      />
+                      <Text style={styles.teacherFullName}>
                         {teacher.Gender == "male" ? "Mr. " : "Ms. "}
                         {teacher.FullName}
                       </Text>
-
-                      <Text
-                        style={{
-                          fontWeight: "bold",
-                          color: "#555457",
-                          fontSize: 16,
-                        }}
-                      >
+                      <Text style={styles.teacherContentTxt}>
                         Username : {teacher.UserName || "Not Found"}
                       </Text>
-                      <Text
-                        style={{
-                          fontWeight: "bold",
-                          color: "#555457",
-                          fontSize: 16,
-                        }}
-                      >
+                      <Text style={styles.teacherContentTxt}>
                         Age : {teacher.Age || "Not found"}
                       </Text>
-                      <Text
-                        style={{
-                          fontWeight: "bold",
-                          color: "#555457",
-                          fontSize: 16,
-                        }}
-                      >
+                      <Text style={styles.teacherContentTxt}>
                         Experience : {teacher.Experience || "Not found"}
                       </Text>
-                      <Text
-                        style={{
-                          fontWeight: "bold",
-                          color: "#555457",
-                          fontSize: 16,
-                        }}
-                      >
+                      <Text style={styles.teacherContentTxt}>
                         Gender : {teacher.Gender || "Not Mentioned"}
                       </Text>
-                      <Text
-                        style={{
-                          fontWeight: "bold",
-                          color: "#555457",
-                          fontSize: 16,
-                        }}
-                      >
+                      <Text style={styles.teacherContentTxt}>
                         Qualifications : {teacher.Qualifications || "Not Found"}
                       </Text>
-                      <Text
-                        style={{
-                          fontWeight: "bold",
-                          color: "#555457",
-                          fontSize: 16,
-                        }}
-                      >
+                      <Text style={styles.teacherContentTxt}>
                         Specializations :{" "}
                         {teacher.Specializations || "Not Found"}
                       </Text>
@@ -605,7 +552,7 @@ export default class HomeScreen extends Component {
               }}
             >
               <Text style={{ color: "gray" }}>
-                Copyright {"\u00A9"} 2021 AGL-LEARNING.
+                Copyright {"\u00A9"} 2022 AGL-LEARNING.
               </Text>
             </View>
           </View>

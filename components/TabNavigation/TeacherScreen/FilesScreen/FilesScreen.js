@@ -435,6 +435,7 @@ export default class FilesScreen extends Component {
 
     const comp = [
       "Everyone",
+      "DU Entrance",
       "UPSC",
       "SSC",
       "Railway",

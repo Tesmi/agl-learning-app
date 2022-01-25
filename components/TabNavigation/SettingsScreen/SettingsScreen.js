@@ -9,8 +9,10 @@ import {
   Alert,
   StatusBar,
   BackHandler,
+  Image,
 } from "react-native";
 import { Appbar, TextInput, List, Button } from "react-native-paper";
+import ImagePicker from "react-native-image-crop-picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "./styles";
 import axios from "axios";
@@ -28,6 +30,8 @@ export default class SettingsScreen extends Component {
       createdOn: "",
       gender: "",
       fullName: "",
+      profileImgLocal: null,
+      profilePic: "default.jpg",
       age: "Not Found",
       experience: "Not Found",
       qualifications: "Not Found",
@@ -38,6 +42,7 @@ export default class SettingsScreen extends Component {
       board: null,
       grade: null,
       class: "",
+      uploadImgBtnDisabled: false,
       updatingPassword: false,
       updatingAccount: false,
       deletingAccount: false,
@@ -201,7 +206,9 @@ export default class SettingsScreen extends Component {
             let Experience = data.Experience;
             let Qualifications = data.Qualifications;
             let Specializations = data.Specializations;
+            let profilePic = data.profilePic;
 
+            if (profilePic) this.setState({ profilePic });
             if (Age) this.setState({ age: Age });
             if (Experience) this.setState({ experience: Experience });
             if (Qualifications)
@@ -397,6 +404,39 @@ export default class SettingsScreen extends Component {
     ]);
     return true;
   }
+
+  async uploadProfileImg() {
+    this.setState({ uploadImgBtnDisabled: true });
+
+    const formData = new FormData();
+    formData.append("profile", {
+      name: new Date() + "_profile",
+      uri: this.state.profileImgLocal,
+      type: "image/jpg",
+    });
+
+    axios
+      .post(`${config.uri}/api/uploadProfilePic`, formData, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "multipart/form-data",
+          authorization: `token ${this.props.token}`,
+        },
+      })
+      .then((e) => {
+        ToastAndroid.show("Image uploaded successfully!", ToastAndroid.SHORT);
+        this.setState({ uploadImgBtnDisabled: false, profileImgLocal: null });
+        this.getSettingsData();
+      })
+      .catch((err) => {
+        ToastAndroid.show(
+          "Something went wrong, try again later!",
+          ToastAndroid.SHORT
+        );
+        this.setState({ uploadImgBtnDisabled: false, profileImgLocal: null });
+      });
+  }
+
   setBoard(board) {
     this.setState({ board, boardExpanded: !this.state.boardExpanded });
   }
@@ -441,6 +481,7 @@ export default class SettingsScreen extends Component {
     ];
 
     const comp = [
+      "DU Entrance",
       "UPSC",
       "SSC",
       "Railway",
@@ -687,6 +728,70 @@ export default class SettingsScreen extends Component {
                 UPDATE ACCOUNT INFO
               </Button>
             </View>
+
+            {this.state.accountType == "teacher" && (
+              <View
+                style={{ ...styles.profileContainer, borderColor: "#7220ba" }}
+              >
+                <Text style={{ ...styles.heading, color: "#7220ba" }}>
+                  Profile Pic
+                </Text>
+                {/* agar user picture select nhi karega to default api call wali pic show hogi  */}
+                {this.state.profileImgLocal ? (
+                  <Image
+                    style={{ width: "100%", height: 300, resizeMode: "cover" }}
+                    source={{
+                      uri: this.state.profileImgLocal,
+                    }}
+                  />
+                ) : (
+                  <Image
+                    style={{ width: "100%", height: 300, resizeMode: "cover" }}
+                    source={{
+                      uri: `${config.uri}/${this.state.profilePic}`,
+                      // uri: `${config.uri}/public/sendProfilePic?username=${this.state.username}`,
+                    }}
+                  />
+                )}
+                <Button
+                  icon="camera-retake"
+                  color="#7220ba"
+                  style={{ marginTop: 12 }}
+                  mode="contained"
+                  onPress={() =>
+                    ImagePicker.openPicker({
+                      width: 600,
+                      height: 600,
+                      cropping: true,
+                    })
+                      .then((image) => {
+                        this.setState({ profileImgLocal: image.path });
+                      })
+                      .catch((err) => {
+                        ToastAndroid.show(
+                          "Error in fetching image!",
+                          ToastAndroid.SHORT
+                        );
+                      })
+                  }
+                >
+                  SELECT IMAGE
+                </Button>
+                {this.state.profileImgLocal && (
+                  <Button
+                    loading={this.state.uploadImgBtnDisabled}
+                    disabled={this.state.uploadImgBtnDisabled}
+                    icon="camera-wireless"
+                    color="#007BFF"
+                    style={{ marginTop: 12 }}
+                    mode="contained"
+                    onPress={() => this.uploadProfileImg()}
+                  >
+                    Upload Image
+                  </Button>
+                )}
+              </View>
+            )}
 
             <View
               style={{ ...styles.profileContainer, borderColor: "#f74b00" }}

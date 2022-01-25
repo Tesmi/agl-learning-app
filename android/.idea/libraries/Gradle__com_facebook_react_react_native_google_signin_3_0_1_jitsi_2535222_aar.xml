@@ -8,6 +8,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad610b6a7ee2f4ca772f43fd7596321e/react-native-google-signin-3.0.1-jitsi-2535222/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad610b6a7ee2f4ca772f43fd7596321e/react-native-google-signin-3.0.1-jitsi-2535222/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad610b6a7ee2f4ca772f43fd7596321e/react-native-google-signin-3.0.1-jitsi-2535222/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/283e160999d86910b289d7d4724df6f0/jetified-react-native-google-signin-3.0.1-jitsi-2535222/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/283e160999d86910b289d7d4724df6f0/jetified-react-native-google-signin-3.0.1-jitsi-2535222/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/283e160999d86910b289d7d4724df6f0/jetified-react-native-google-signin-3.0.1-jitsi-2535222/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

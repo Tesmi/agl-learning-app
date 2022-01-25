@@ -141,8 +141,9 @@ android {
         applicationId "com.agl_learning_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
-        versionName "1.0.1_6"
+        versionCode 8
+        versionName "1.0.1_8"
+        vectorDrawables.useSupportLibrary = true
     }
     splits {
         abi {
@@ -225,7 +226,7 @@ dependencies {
       //exclude group: 'com.facebook.react',module:'react-native-sound'
     }
 
-    implementation('org.jitsi.react:jitsi-meet-sdk:3.+') { 
+    implementation('org.jitsi.react:jitsi-meet-sdk:4.+') { 
         transitive = true 
         exclude module: 'react-native-video'
         exclude group: 'com.facebook.react',module:'react-native-svg'

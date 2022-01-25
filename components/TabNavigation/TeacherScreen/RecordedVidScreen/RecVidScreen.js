@@ -9,9 +9,10 @@ import {
   ScrollView,
   BackHandler,
 } from "react-native";
-import { Appbar, Button } from "react-native-paper";
 
-import VideoPlayer from "react-native-video-player";
+import { WebView } from "react-native-webview";
+
+import { Appbar, Button } from "react-native-paper";
 
 import styles from "./styles";
 import axios from "axios";
@@ -71,24 +72,16 @@ export default class RecVidScreen extends Component {
 
   render() {
     return this.state.vidUrl ? (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#000",
-          justifyContent: "center",
-        }}
-      >
+      <View style={{ flex: 1 }}>
         <StatusBar hidden />
-
-        <VideoPlayer
-          resizeMode="contain"
-          showDuration={true}
-          autoplay={true}
-          disableControlsAutoHide={true}
-          video={{
+        <WebView
+          scrollEnabled={false}
+          allowsFullscreenVideo={true}
+          style={{ flex: 1 }}
+          javaScriptEnabled={true}
+          source={{
             uri: this.state.vidUrl,
           }}
-          videoHeight={900}
         />
       </View>
     ) : this.state.loading ? (
